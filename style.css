@@ -6,23 +6,24 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Inter', sans-serif;
   background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
   color: #eaeaea;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
+  padding: 40px 20px;
+  line-height: 1.6;
 }
 
 /* Headings */
 h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   animation: fadeInDown 1s ease-in-out;
 }
 
@@ -34,11 +35,19 @@ h2 {
   animation: fadeInDown 1s ease-in-out;
 }
 
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
 p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
-  margin-bottom: 25px;
-  color: #bbb;
+  margin-bottom: 20px;
+  color: #ddd;
+  max-width: 800px;
   animation: fadeInUp 1.2s ease-in-out;
 }
 
@@ -57,7 +66,7 @@ a {
 
 .button {
   padding: 14px 30px;
-  background: rgba(0, 123, 255, 0.15);
+  background: rgba(0, 123, 255, 0.2);
   border: 1px solid #007bff;
   border-radius: 12px;
   color: #fff;
@@ -65,18 +74,28 @@ a {
   font-weight: 500;
   transition: all 0.3s ease;
   backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .button:hover {
   background: #007bff;
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+/* Main Content Container */
+main {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Contact Info */
 .contact {
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 1rem;
   animation: fadeIn 1.4s ease-in-out;
 }
@@ -94,6 +113,7 @@ a {
 
 /* Footer */
 footer {
+  margin-top: 50px;
   padding: 20px 0;
   font-size: 0.9rem;
   color: #777;
