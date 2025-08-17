@@ -1,57 +1,119 @@
-/* style.css */
-body {
+/* General Reset */
+* {
   margin: 0;
-  font-family: "Inter", sans-serif;
-  background-color: #0d1117;
-  color: #e6edf3;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #eaeaea;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-header, footer {
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  padding: 1.5rem;
-  background: #161b22;
+  padding: 0 20px;
 }
 
-header h1 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-nav {
-  margin: 1rem 0;
-}
-
-nav a {
-  display: inline-block;
-  margin: 0.4rem;
-  padding: 0.8rem 1.4rem;
-  background: #238636;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: transform 0.2s ease, background 0.3s ease;
-}
-
-nav a:hover {
-  background: #2ea043;
-  transform: translateY(-3px);
-}
-
-main {
-  flex: 1;
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #161b22;
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+/* Headings */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  animation: fadeInDown 1s ease-in-out;
 }
 
 h2 {
-  border-bottom: 2px solid #30363d;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 25px;
+  color: #bbb;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Navigation Buttons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  padding: 14px 30px;
+  background: rgba(0, 123, 255, 0.15);
+  border: 1px solid #007bff;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background: #007bff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Contact Info */
+.contact {
+  margin-top: 20px;
+  font-size: 1rem;
+  animation: fadeIn 1.4s ease-in-out;
+}
+
+.contact a {
+  color: #1da1f2;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact a:hover {
+  color: #63c5ff;
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #2a2a2a;
+  width: 100%;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
