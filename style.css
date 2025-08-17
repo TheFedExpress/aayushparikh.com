@@ -1,7 +1,7 @@
-/* Dark background and light text */
+/* Dark Mode */
 body {
-    background-color: #121212; /* dark gray */
-    color: #ffffff; /* white text */
+    background-color: #121212;
+    color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -9,41 +9,64 @@ body {
 
 /* Links */
 a {
-    color: #00bfff; /* bright blue */
+    color: #00bfff;
     text-decoration: none;
     transition: color 0.3s;
 }
-
-a:hover {
-    color: #ff4081; /* pinkish hover effect */
-}
+a:hover { color: #ff4081; }
 
 /* Header */
 header {
     background-color: #1f1f1f;
     padding: 20px;
     text-align: center;
-    color: #ffffff;
 }
+nav a { margin: 0 15px; font-weight: bold; }
 
-/* Navigation */
-nav a {
-    margin: 0 15px;
-}
-
-/* Sections */
+/* Main sections */
 section {
     margin: 40px 20px;
     padding: 20px;
     border-radius: 10px;
     background-color: #1a1a1a;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.3s;
 }
-
-/* Section hover animation */
 section:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+/* Buttons */
+button {
+    background-color: #00bfff;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+}
+button:hover {
+    transform: scale(1.1);
+    background-color: #ff4081;
+}
+
+/* Cards for volunteering */
+.card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
 /* Footer */
@@ -54,17 +77,13 @@ footer {
     padding: 20px;
 }
 
-/* Fade-in animation for sections */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-    animation-delay: 0.3s; /* adjust for multiple sections */
+/* Animations */
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+h1, h2 { animation: slideIn 1s ease forwards; }
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
 }
