@@ -1,44 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Tennis - Aayush Parikh</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tennis - Aayush Parikh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <h1>Aayush Parikh</h1>
-    <div class="button-nav">
-        <a class="nav-btn" href="index.html">Home</a>
-        <a class="nav-btn" href="about.html">About Me</a>
-        <a class="nav-btn" href="volunteering.html">Volunteering</a>
-        <a class="nav-btn" href="academics.html">Academics</a>
-        <a class="nav-btn" href="contact.html">Contact</a>
+  <main>
+    <h1>Tennis</h1>
+    <p><strong>Freshman Year:</strong> Line 2 on Round Rock Varsity, youngest player, reached 2nd round of districts.</p>
+    <p><strong>Sophomore Year:</strong> Transferred to Westwood, played Line 6, reached 2nd round of regionals.</p>
+    <p><strong>Fall Season:</strong> Line 1 doubles, Line 6 singles, won state championship.</p>
+    <p><strong>Junior Year:</strong> Team captain, currently Line 3.</p>
+
+    <div class="buttons">
+      <a href="index.html" class="button">Home</a>
+      <a href="about.html" class="button">About Me</a>
+      <a href="academics.html" class="button">Academics</a>
+      <a href="volunteering.html" class="button">Volunteering</a>
+      <a href="contact.html" class="button">Contact</a>
     </div>
-</header>
+  </main>
 
-<main>
-    <section>
-        <h2>Tennis</h2>
-        <p><strong>Round Rock High School:</strong> Line 2 varsity, youngest player, 2nd round of districts.</p>
-        <p><strong>Westwood High School:</strong> Sophomore year - line 6, 2nd round of regionals.</p>
-        <p>Fall season - line 1 doubles & line 6 singles, won state.</p>
-        <p>Current year - captain, line 3.</p>
-    </section>
-</main>
-
-<footer>
-    <p>© 2025 Aayush Parikh</p>
-</footer>
-
-<script>
-    const currentPage = 'tennis';
-    const navButtons = document.querySelectorAll('.nav-btn');
-    navButtons.forEach(btn => {
-        if(btn.getAttribute('href') === currentPage + '.html'){
-            btn.classList.add('active-btn');
-        }
-    });
-</script>
+  <footer>
+    © 2025 Aayush Parikh. All rights reserved.
+  </footer>
 </body>
 </html>
