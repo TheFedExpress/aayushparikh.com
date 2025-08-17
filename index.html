@@ -9,41 +9,33 @@
 
 <header>
     <h1>Aayush Parikh</h1>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#tennis">Tennis & Activities</a>
-        <a href="#volunteering">Volunteering</a>
-        <a href="#academics">Academics</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="button-nav">
+        <button class="nav-btn" data-target="about">About Me</button>
+        <button class="nav-btn" data-target="tennis">Tennis</button>
+        <button class="nav-btn" data-target="volunteering">Volunteering</button>
+        <button class="nav-btn" data-target="academics">Academics</button>
+        <button class="nav-btn" data-target="contact">Contact</button>
+    </div>
 </header>
 
 <main>
-
-    <section id="about">
+    <section id="about" class="page-section active">
         <h2>About Me</h2>
         <p>Junior at Westwood High School.</p>
         <p>Honest, dedicated, relentless, and patient.</p>
         <p>I love reading fiction, solving Rubik's cubes, and practicing Taekwondo.</p>
-        <button class="toggle-btn" data-target="personal-details">More Personal Info</button>
-        <div id="personal-details" class="hidden">
-            <p>I have taken Geometry, Algebra 1 & 2, AP Precalculus (Score: 5), AP Human Geography (5), AP Physics 1 (5), AP Computer Science A (4), AP Statistics (5), Biology, Chemistry, 3 years of Spanish, 4 years of Orchestra.</p>
-        </div>
+        <p>I have taken Geometry, Algebra 1 & 2, AP Precalculus (Score: 5), AP Human Geography (5), AP Physics 1 (5), AP Computer Science A (4), AP Statistics (5), Biology, Chemistry, 3 years of Spanish, and 4 years of Orchestra.</p>
     </section>
 
-    <section id="tennis">
-        <h2>Tennis & Activities</h2>
-        <button class="toggle-btn" data-target="tennis-details">Show Tennis History</button>
-        <div id="tennis-details" class="hidden">
-            <p><strong>Round Rock High School:</strong> Line 2 varsity, youngest player, 2nd round of districts.</p>
-            <p><strong>Westwood High School:</strong> Sophomore year - line 6, 2nd round of regionals.</p>
-            <p>Fall season - line 1 doubles & line 6 singles, won state.</p>
-            <p>Current year - captain, line 3.</p>
-        </div>
-        <p>Other activities: Taekwondo, solving Rubik's Cube, reading fiction.</p>
+    <section id="tennis" class="page-section">
+        <h2>Tennis</h2>
+        <p><strong>Round Rock High School:</strong> Line 2 varsity, youngest player, 2nd round of districts.</p>
+        <p><strong>Westwood High School:</strong> Sophomore year - line 6, 2nd round of regionals.</p>
+        <p>Fall season - line 1 doubles & line 6 singles, won state.</p>
+        <p>Current year - captain, line 3.</p>
     </section>
 
-    <section id="volunteering">
+    <section id="volunteering" class="page-section">
         <h2>Volunteering & Community</h2>
         <div class="card">
             <h3>First Racquet (Austin Branch)</h3>
@@ -52,9 +44,8 @@
         </div>
     </section>
 
-    <section id="academics">
+    <section id="academics" class="page-section">
         <h2>Academics</h2>
-
         <h3>STEM</h3>
         <ul>
             <li>Geometry</li>
@@ -79,11 +70,10 @@
         </ul>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="page-section">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
     </section>
-
 </main>
 
 <footer>
@@ -91,12 +81,20 @@
 </footer>
 
 <script>
-    // Toggle buttons to show/hide content
-    const buttons = document.querySelectorAll('.toggle-btn');
-    buttons.forEach(btn => {
+    const navButtons = document.querySelectorAll('.nav-btn');
+    const sections = document.querySelectorAll('.page-section');
+
+    navButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            const target = document.getElementById(btn.dataset.target);
-            target.classList.toggle('hidden');
+            const targetId = btn.dataset.target;
+
+            sections.forEach(sec => {
+                if(sec.id === targetId){
+                    sec.classList.add('active');
+                } else {
+                    sec.classList.remove('active');
+                }
+            });
         });
     });
 </script>
