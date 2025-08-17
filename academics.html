@@ -48,5 +48,15 @@
 <footer>
     <p>© 2025 Aayush Parikh</p>
 </footer>
+
+<script>
+    const currentPage = 'academics';
+    const navButtons = document.querySelectorAll('.nav-btn');
+    navButtons.forEach(btn => {
+        if(btn.getAttribute('href') === currentPage + '.html'){
+            btn.classList.add('active-btn');
+        }
+    });
+</script>
 </body>
 </html>
