@@ -1,45 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Volunteering - Aayush Parikh</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteering - Aayush Parikh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <h1>Aayush Parikh</h1>
-    <div class="button-nav">
-        <a class="nav-btn" href="index.html">Home</a>
-        <a class="nav-btn" href="about.html">About Me</a>
-        <a class="nav-btn" href="tennis.html">Tennis</a>
-        <a class="nav-btn" href="academics.html">Academics</a>
-        <a class="nav-btn" href="contact.html">Contact</a>
+  <main>
+    <h1>Volunteering</h1>
+    <p>I am the director of the Austin branch of <strong>First Racquet</strong>, a nonprofit founded in Houston. We organize tennis tournaments and donate proceeds, racquets, shoes, clothes, strings, and balls to underprivileged kids in Angola.</p>
+
+    <div class="buttons">
+      <a href="index.html" class="button">Home</a>
+      <a href="about.html" class="button">About Me</a>
+      <a href="tennis.html" class="button">Tennis</a>
+      <a href="academics.html" class="button">Academics</a>
+      <a href="contact.html" class="button">Contact</a>
     </div>
-</header>
+  </main>
 
-<main>
-    <section>
-        <h2>Volunteering & Community</h2>
-        <div class="card">
-            <h3>First Racquet (Austin Branch)</h3>
-            <p>Director of the Austin branch of First Racquet, a nonprofit founded in Houston.</p>
-            <p>We organize tennis tournaments and donate proceeds along with racquets, shoes, clothes, strings, and balls to underprivileged kids in Angola.</p>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <p>© 2025 Aayush Parikh</p>
-</footer>
-
-<script>
-    const currentPage = 'volunteering';
-    const navButtons = document.querySelectorAll('.nav-btn');
-    navButtons.forEach(btn => {
-        if(btn.getAttribute('href') === currentPage + '.html'){
-            btn.classList.add('active-btn');
-        }
-    });
-</script>
+  <footer>
+    © 2025 Aayush Parikh. All rights reserved.
+  </footer>
 </body>
 </html>
