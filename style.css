@@ -21,46 +21,42 @@ header {
     padding: 20px;
     text-align: center;
 }
-nav a { margin: 0 15px; font-weight: bold; }
-
-/* Main sections */
-section {
-    margin: 40px 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #1a1a1a;
-    transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-    animation-delay: 0.3s;
+.button-nav {
+    margin-top: 10px;
 }
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-}
-
-/* Buttons */
-button {
+.nav-btn {
     background-color: #00bfff;
     color: #121212;
     border: none;
     padding: 10px 20px;
+    margin: 5px;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px;
     transition: transform 0.3s, background-color 0.3s;
 }
-button:hover {
+.nav-btn:hover {
     transform: scale(1.1);
     background-color: #ff4081;
 }
 
-/* Hidden content for toggles */
-.hidden {
+/* Sections */
+.page-section {
     display: none;
-    margin-top: 15px;
+    margin: 40px 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Active section */
+.page-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Cards for volunteering */
@@ -85,10 +81,6 @@ footer {
 }
 
 /* Animations */
-@keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
-}
-
 h1, h2 { animation: slideIn 1s ease forwards; }
 @keyframes slideIn {
     from { opacity: 0; transform: translateX(-50px); }
