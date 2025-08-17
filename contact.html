@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Contact - Aayush Parikh</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Aayush Parikh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <h1>Aayush Parikh</h1>
-    <div class="button-nav">
-        <a class="nav-btn" href="index.html">Home</a>
-        <a class="nav-btn" href="about.html">About Me</a>
-        <a class="nav-btn" href="tennis.html">Tennis</a>
-        <a class="nav-btn" href="volunteering.html">Volunteering</a>
-        <a class="nav-btn" href="academics.html">Academics</a>
+  <main>
+    <h1>Contact</h1>
+    <p>Email: <a href="mailto:parikhaayush@gmail.com">parikhaayush@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/parikh-aayush/" target="_blank">linkedin.com/in/parikh-aayush</a></p>
+
+    <div class="buttons">
+      <a href="index.html" class="button">Home</a>
+      <a href="about.html" class="button">About Me</a>
+      <a href="tennis.html" class="button">Tennis</a>
+      <a href="academics.html" class="button">Academics</a>
+      <a href="volunteering.html" class="button">Volunteering</a>
     </div>
-</header>
+  </main>
 
-<main>
-    <section>
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:parikhaayush@gmail.com">parikhaayush@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/parikh-aayush/" target="_blank">linkedin.com/in/parikh-aayush</a></p>
-    </section>
-</main>
-
-<footer>
-    <p>© 2025 Aayush Parikh</p>
-</footer>
-
-<script>
-    const currentPage = 'contact';
-    const navButtons = document.querySelectorAll('.nav-btn');
-    navButtons.forEach(btn => {
-        if(btn.getAttribute('href') === currentPage + '.html'){
-            btn.classList.add('active-btn');
-        }
-    });
-</script>
+  <footer>
+    © 2025 Aayush Parikh. All rights reserved.
+  </footer>
 </body>
 </html>
