@@ -1,123 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academics - Aayush Parikh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    /* Horizontal Timeline Styling */
-    .timeline-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 2rem 0;
-      position: relative;
-    }
+/* =========================
+   General Styles
+========================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #222;
+}
 
-    .timeline-container::before {
-      content: "";
-      position: absolute;
-      top: 25px;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background-color: #444;
-      border-radius: 2px;
-      z-index: 1;
-    }
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
 
-    .timeline-item {
-      position: relative;
-      text-align: center;
-      flex: 1;
-      z-index: 2;
-    }
+h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
-    .timeline-dot {
-      width: 20px;
-      height: 20px;
-      background-color: #444;
-      border-radius: 50%;
-      margin: 0 auto 10px;
-      transition: all 0.3s ease;
-    }
+h2, h3 {
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
 
-    .timeline-year {
-      font-weight: 600;
-      color: #222;
-      margin-bottom: 0.3rem;
-    }
+p, li {
+  color: #444;
+  line-height: 1.5;
+  font-size: 1rem;
+}
 
-    .timeline-desc {
-      color: #555;
-      font-size: 0.9rem;
-      max-width: 200px;
-      margin: 0 auto;
-    }
+/* =========================
+   Buttons
+========================= */
+.button {
+  display: inline-block;
+  background-color: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-    /* Hover Effects */
-    .timeline-item:hover .timeline-dot {
-      background-color: #ff4081; /* Accent pink (matches button hover theme) */
-      transform: scale(1.2);
-    }
+.button:hover {
+  background-color: #ff4081;
+  transform: scale(1.05);
+}
 
-    .timeline-item:hover .timeline-desc {
-      color: #000;
-      font-weight: 500;
-    }
-  </style>
-</head>
-<body>
-  <main>
-    <h1>Academics</h1>
+/* =========================
+   Timeline Styles
+========================= */
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  position: relative;
+}
 
-    <h2>STEM</h2>
-    <p>Geometry, Algebra 1 & 2, Biology, Chemistry</p>
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #888;
+  border-radius: 2px;
+  z-index: 1;
+}
 
-    <h3>STEM Journey</h3>
-    <div class="timeline-container">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-year">3rd Grade</p>
-        <p class="timeline-desc">Participated in FIRST LEGO League (FLL)</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-year">4th–7th Grade</p>
-        <p class="timeline-desc">Built & programmed an EV3 robot</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-year">Middle–High School</p>
-        <p class="timeline-desc">Learned Python & Raspberry Pi</p>
-      </div>
-    </div>
+.timeline-item {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  z-index: 2;
+}
 
-    <h2>AP</h2>
-    <p>AP Precalculus (5), AP Human Geography (5), AP Physics 1 (5), AP Computer Science A (4), AP Statistics (5)</p>
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  transition: all 0.3s ease;
+}
 
-    <h2>Electives</h2>
-    <p>3 Years of Spanish, 4 Years of Orchestra</p>
+.timeline-year {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
 
-    <h2>Honors & Awards</h2>
-    <ul>
-      <li>National Junior Honor Society (NJHS) – 8th Grade</li>
-      <li>National Honor Society (NHS) – 11th Grade</li>
-    </ul>
+.timeline-desc {
+  color: #444;
+  font-size: 0.9rem;
+  max-width: 200px;
+  margin: 0 auto;
+}
 
-    <div class="buttons">
-      <a href="index.html" class="button">Home</a>
-      <a href="about.html" class="button">About Me</a>
-      <a href="tennis.html" class="button">Tennis</a>
-      <a href="volunteering.html" class="button">Volunteering</a>
-      <a href="contact.html" class="button">Contact</a>
-    </div>
-  </main>
+.timeline-item:hover .timeline-dot {
+  background-color: #ff4081;
+  transform: scale(1.2);
+}
 
-  <footer>
-    © 2025 Aayush Parikh. All rights reserved.
-  </footer>
-</body>
-</html>
+.timeline-item:hover .timeline-desc {
+  color: #000;
+  font-weight: 500;
+}
+
+/* =========================
+   Contact Icons
+========================= */
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.contact-item i {
+  color: #ff4081;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-item a {
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #ff4081;
+}
+
+.contact-item:hover i {
+  transform: scale(1.2);
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #ddd;
+}
+
+/* =========================
+   Lists
+========================= */
+ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  text-align: left;
+}
