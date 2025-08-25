@@ -5,8 +5,8 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fff;
-  color: #222;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light text */
 }
 
 main {
@@ -28,7 +28,7 @@ h2, h3 {
 }
 
 p, li {
-  color: #444;
+  color: #ccc;
   line-height: 1.5;
   font-size: 1rem;
 }
@@ -36,6 +36,10 @@ p, li {
 /* =========================
    Buttons
 ========================= */
+.buttons {
+  margin: 1rem 0 2rem 0;
+}
+
 .button {
   display: inline-block;
   background-color: #222;
@@ -49,7 +53,7 @@ p, li {
 }
 
 .button:hover {
-  background-color: #ff4081;
+  background-color: #ff4081; /* Pink accent */
   transform: scale(1.05);
 }
 
@@ -71,7 +75,7 @@ p, li {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: #888;
+  background-color: #555;
   border-radius: 2px;
   z-index: 1;
 }
@@ -86,7 +90,7 @@ p, li {
 .timeline-dot {
   width: 20px;
   height: 20px;
-  background-color: #555;
+  background-color: #888;
   border-radius: 50%;
   margin: 0 auto 10px;
   transition: all 0.3s ease;
@@ -94,12 +98,12 @@ p, li {
 
 .timeline-year {
   font-weight: 600;
-  color: #222;
+  color: #e0e0e0;
   margin-bottom: 0.3rem;
 }
 
 .timeline-desc {
-  color: #444;
+  color: #ccc;
   font-size: 0.9rem;
   max-width: 200px;
   margin: 0 auto;
@@ -111,12 +115,12 @@ p, li {
 }
 
 .timeline-item:hover .timeline-desc {
-  color: #000;
+  color: #fff;
   font-weight: 500;
 }
 
 /* =========================
-   Contact Icons
+   Contact Icons (Contact Page Only)
 ========================= */
 .contact-item {
   display: flex;
@@ -134,7 +138,7 @@ p, li {
 }
 
 .contact-item a {
-  color: #444;
+  color: #ccc;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -156,8 +160,8 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
   font-size: 0.9rem;
-  color: #555;
-  border-top: 1px solid #ddd;
+  color: #aaa;
+  border-top: 1px solid #333;
 }
 
 /* =========================
