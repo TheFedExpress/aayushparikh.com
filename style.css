@@ -1,65 +1,85 @@
-/* =========================
-   General Styles
-========================= */
-body {
+/* ==========================
+   Global Styles
+========================== */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text */
 }
 
+a {
+  color: #ff4081;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffa0c5;
+}
+
+/* ==========================
+   Header & Navigation
+========================== */
+header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.top-buttons {
+  margin-top: 0.5rem;
+}
+
+.top-buttons .button {
+  background-color: #222;
+  color: #eee;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.top-buttons .button:hover {
+  background-color: #ff4081;
+  color: #fff;
+}
+
+/* ==========================
+   Main Content
+========================== */
 main {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  text-align: center;
+  margin: auto;
+  padding: 1rem;
 }
 
-h1 {
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-h2, h3 {
-  font-weight: 500;
-  margin-top: 2rem;
+h1, h2, h3 {
   margin-bottom: 0.5rem;
 }
 
 p, li {
-  color: #ccc;
-  line-height: 1.5;
-  font-size: 1rem;
+  line-height: 1.6;
 }
 
-/* =========================
-   Buttons
-========================= */
-.buttons {
-  margin: 1rem 0 2rem 0;
+ul {
+  padding-left: 1.2rem;
 }
 
-.button {
-  display: inline-block;
-  background-color: #222;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  margin: 0.3rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+/* ==========================
+   Footer
+========================== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  margin-top: 2rem;
+  border-top: 1px solid #333;
 }
 
-.button:hover {
-  background-color: #ff4081; /* Pink accent */
-  transform: scale(1.05);
-}
-
-/* =========================
-   Timeline Styles
-========================= */
+/* ==========================
+   Timeline (Academics Page)
+========================== */
 .timeline-container {
   display: flex;
   justify-content: space-between;
@@ -75,7 +95,7 @@ p, li {
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: #555;
+  background-color: #444;
   border-radius: 2px;
   z-index: 1;
 }
@@ -90,7 +110,7 @@ p, li {
 .timeline-dot {
   width: 20px;
   height: 20px;
-  background-color: #888;
+  background-color: #444;
   border-radius: 50%;
   margin: 0 auto 10px;
   transition: all 0.3s ease;
@@ -98,17 +118,19 @@ p, li {
 
 .timeline-year {
   font-weight: 600;
-  color: #e0e0e0;
+  color: #eee;
   margin-bottom: 0.3rem;
 }
 
 .timeline-desc {
-  color: #ccc;
+  color: #aaa;
   font-size: 0.9rem;
   max-width: 200px;
   margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
+/* Timeline Hover Effects */
 .timeline-item:hover .timeline-dot {
   background-color: #ff4081;
   transform: scale(1.2);
@@ -119,56 +141,24 @@ p, li {
   font-weight: 500;
 }
 
-/* =========================
-   Contact Icons (Contact Page Only)
-========================= */
-.contact-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
+/* ==========================
+   Responsive Design
+========================== */
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.contact-item i {
-  color: #ff4081;
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
+  .timeline-item {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
 
-.contact-item a {
-  color: #ccc;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.contact-item a:hover {
-  color: #ff4081;
-}
-
-.contact-item:hover i {
-  transform: scale(1.2);
-}
-
-/* =========================
-   Footer
-========================= */
-footer {
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #aaa;
-  border-top: 1px solid #333;
-}
-
-/* =========================
-   Lists
-========================= */
-ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  text-align: left;
+  .timeline-container::before {
+    width: 4px;
+    height: 100%;
+    left: 10px;
+    top: 0;
+  }
 }
