@@ -24,10 +24,16 @@ a:hover {
 header {
   text-align: center;
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .top-buttons {
   margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .top-buttons .button {
