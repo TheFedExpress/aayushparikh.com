@@ -90,7 +90,7 @@ tbody tr {
   transition: background-color 0.3s ease;
 }
 tbody tr:hover {
-  background-color: #2a2a2a;
+  background-color: #fcd7e5;
 }
 tbody tr:last-child {
   border-bottom: none;
