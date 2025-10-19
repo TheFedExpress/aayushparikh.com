@@ -34,7 +34,7 @@
 </head>
 <body>
   <!-- Theme Toggle Button -->
-  <button id="themeToggle" title="Toggle dark/light mode">🌙</button>
+  <div id="themeToggle" title="Toggle dark/light mode"></div>
   
   <header>
     <h1>Extracurriculars</h1>
@@ -64,17 +64,14 @@
     const currentTheme = localStorage.getItem('theme') || 'dark';
     if (currentTheme === 'light') {
       body.classList.add('light-mode');
-      themeToggle.textContent = '☀️';
     }
     
     themeToggle.addEventListener('click', () => {
       body.classList.toggle('light-mode');
       
       if (body.classList.contains('light-mode')) {
-        themeToggle.textContent = '☀️';
         localStorage.setItem('theme', 'light');
       } else {
-        themeToggle.textContent = '🌙';
         localStorage.setItem('theme', 'dark');
       }
     });
