@@ -17,11 +17,14 @@
   <meta name="twitter:title" content="Aayush Parikh | Home">
   <meta name="twitter:description" content="Hi, I'm Aayush Parikh, a junior at Westwood High School with a deep interest in STEM and tennis.">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DEYPJK1WW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -29,7 +32,10 @@
     gtag('config', 'G-7DEYPJK1WW');
   </script>
 </head>
-<body class="dark-mode">
+<body>
+  <!-- Theme Toggle Button -->
+  <button id="themeToggle" title="Toggle dark/light mode">🌙</button>
+  
   <header>
     <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
@@ -51,6 +57,29 @@
   </footer>
   <button id="backToTop" title="Back to top">↑</button>
   <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    
+    // Check for saved theme preference or default to dark mode
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (currentTheme === 'light') {
+      body.classList.add('light-mode');
+      themeToggle.textContent = '☀️';
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      
+      if (body.classList.contains('light-mode')) {
+        themeToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+      } else {
+        themeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+    
     // Back to Top Button
     const backToTopButton = document.getElementById('backToTop');
     
