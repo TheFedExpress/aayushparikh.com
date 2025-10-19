@@ -7,8 +7,30 @@
   <meta name="description" content="Aayush Parikh's academic journey, AP classes, STEM projects, electives, and honors.">
   <meta name="keywords" content="Aayush Parikh, Academics, AP classes, STEM, NJHS, NHS, electives">
   <meta name="author" content="Aayush Parikh">
+  
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="Academics | Aayush Parikh">
+  <meta property="og:description" content="Aayush Parikh's academic achievements, AP classes, and STEM journey.">
+  <meta property="og:url" content="https://www.aayushparikh.com/academics.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Academics | Aayush Parikh">
+  <meta name="twitter:description" content="Aayush Parikh's academic achievements, AP classes, and STEM journey.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body class="dark-mode">
   <header>
@@ -68,5 +90,26 @@
   <footer>
     © 2025 Aayush Parikh. All rights reserved.
   </footer>
+  <button id="backToTop" title="Back to top">↑</button>
+  <script>
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 150) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
 </body>
 </html>
