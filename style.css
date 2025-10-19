@@ -123,18 +123,19 @@ header h1 {
   position: fixed;
   top: 20px;
   right: 20px;
-  width: 60px;
-  height: 30px;
+  width: 64px;
+  height: 32px;
   background-color: #333;
   border: 2px solid #ff4081;
-  border-radius: 30px;
+  border-radius: 32px;
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 1000;
   display: flex;
   align-items: center;
-  padding: 3px;
+  padding: 2px;
   box-shadow: 0 4px 12px rgba(255, 64, 129, 0.3);
+  overflow: hidden;
 }
 #themeToggle:hover {
   box-shadow: 0 6px 16px rgba(255, 64, 129, 0.5);
@@ -142,8 +143,8 @@ header h1 {
 #themeToggle::before {
   content: '🌙';
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   background-color: #ff4081;
   border-radius: 50%;
   transition: all 0.3s ease;
@@ -151,7 +152,7 @@ header h1 {
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  left: 3px;
+  left: 2px;
 }
 body.light-mode #themeToggle {
   background-color: #f0f0f0;
@@ -159,7 +160,7 @@ body.light-mode #themeToggle {
 }
 body.light-mode #themeToggle::before {
   content: '☀️';
-  left: calc(100% - 27px);
+  left: calc(100% - 28px);
   background-color: #ff4081;
 }
 /* ==========================
