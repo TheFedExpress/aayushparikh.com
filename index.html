@@ -14,7 +14,7 @@
   <header>
     <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
-      <a href="index.html" class="button">Home</a>
+      <a href="index.html" class="button active">Home</a>
       <a href="tennis.html" class="button">Tennis</a>
       <a href="academics.html" class="button">Academics</a>
       <a href="volunteering.html" class="button">Volunteering</a>
@@ -30,5 +30,26 @@
   <footer>
     © 2025 Aayush Parikh. All rights reserved.
   </footer>
+  <button id="backToTop" title="Back to top">↑</button>
+  <script>
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
 </body>
 </html>
