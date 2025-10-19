@@ -7,8 +7,27 @@
   <meta name="description" content="Hi, I'm Aayush Parikh, a junior at Westwood High School with a deep interest in STEM and a lifelong connection to tennis. I believe in steady progress, whether it's in academics, competition, or personal growth.">
   <meta name="keywords" content="Aayush Parikh, student, tennis, STEM, volunteering, National Honor Society, AP classes">
   <meta name="author" content="Aayush Parikh">
+  
+  <!-- Social Media Meta Tags -->
+  <meta property="og:title" content="Aayush Parikh | Home">
+  <meta property="og:description" content="Hi, I'm Aayush Parikh, a junior at Westwood High School with a deep interest in STEM and tennis.">
+  <meta property="og:url" content="https://www.aayushparikh.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Aayush Parikh | Home">
+  <meta name="twitter:description" content="Hi, I'm Aayush Parikh, a junior at Westwood High School with a deep interest in STEM and tennis.">
+  
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
 </head>
 <body class="dark-mode">
   <header>
@@ -36,7 +55,7 @@
     const backToTopButton = document.getElementById('backToTop');
     
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset > 150) {
         backToTopButton.classList.add('show');
       } else {
         backToTopButton.classList.remove('show');
