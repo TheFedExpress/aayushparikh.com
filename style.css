@@ -7,6 +7,7 @@ body.dark-mode {
   font-family: 'Sora', sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Clash Display', sans-serif;
@@ -27,6 +28,15 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: fadeInDown 0.8s ease;
+}
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ff4081, #ffa0c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 .top-buttons {
   margin-top: 0.5rem;
@@ -41,11 +51,20 @@ header {
   margin: 0.2rem;
   text-decoration: none;
   border-radius: 5px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 .top-buttons .button:hover {
   background-color: #ff4081;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 64, 129, 0.3);
+}
+.top-buttons .button.active {
+  background-color: #ff4081;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 64, 129, 0.5);
 }
 /* ==========================
    Main Content
@@ -54,15 +73,42 @@ main {
   max-width: 900px;
   margin: auto;
   padding: 1rem;
+  animation: fadeIn 1s ease;
 }
 h1, h2, h3 {
   margin-bottom: 0.5rem;
+}
+h2 {
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ff4081;
+  display: inline-block;
 }
 p, li {
   line-height: 1.6;
 }
 ul {
   padding-left: 1.2rem;
+}
+/* Hero Section (Home Page) */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ff4081, #ffa0c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1s ease;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
+  animation: fadeInUp 1.2s ease;
 }
 /* ==========================
    Table Styles
@@ -90,7 +136,7 @@ tbody tr {
   transition: background-color 0.3s ease;
 }
 tbody tr:hover {
-  background-color: #470b22;
+  background-color: #2a2a2a;
 }
 tbody tr:last-child {
   border-bottom: none;
@@ -192,4 +238,72 @@ footer {
   thead th, td {
     padding: 0.75rem 0.5rem;
   }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+}
+/* ==========================
+   Animations
+========================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ==========================
+   Back to Top Button
+========================== */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ff4081;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(255, 64, 129, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+#backToTop:hover {
+  background-color: #ffa0c5;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(255, 64, 129, 0.6);
+}
+#backToTop.show {
+  display: flex;
+  animation: fadeIn 0.3s ease;
 }
