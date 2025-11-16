@@ -54,6 +54,12 @@ body.light-mode .timeline-year {
 body.light-mode .timeline-desc {
   color: #666;
 }
+body.light-mode .timeline-item:hover .timeline-year {
+  color: #333;
+}
+body.light-mode .timeline-container::before {
+  background-color: #ddd;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Clash Display', sans-serif;
 }
@@ -261,9 +267,10 @@ footer {
 .timeline-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin: 2rem 0;
   position: relative;
+  padding: 1rem 0;
 }
 .timeline-container::before {
   content: "";
@@ -281,6 +288,7 @@ footer {
   text-align: center;
   flex: 1;
   z-index: 2;
+  padding: 0 0.5rem;
 }
 .timeline-dot {
   width: 20px;
@@ -294,13 +302,15 @@ footer {
   font-weight: 600;
   color: #eee;
   margin-bottom: 0.3rem;
+  font-size: 0.95rem;
 }
 .timeline-desc {
   color: #aaa;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   max-width: 200px;
   margin: 0 auto;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
+  line-height: 1.4;
 }
 /* Timeline Hover Effects */
 .timeline-item:hover .timeline-dot {
@@ -308,8 +318,15 @@ footer {
   transform: scale(1.2);
 }
 .timeline-item:hover .timeline-desc {
-  color: #fff;
+  color: #ff4081;
   font-weight: 500;
+}
+/* Light mode timeline adjustments */
+body.light-mode .timeline-item:hover .timeline-dot {
+  background-color: #d81b60;
+}
+body.light-mode .timeline-item:hover .timeline-desc {
+  color: #d81b60;
 }
 /* ==========================
    Responsive Design
@@ -318,16 +335,32 @@ footer {
   .timeline-container {
     flex-direction: column;
     align-items: flex-start;
+    padding-left: 2rem;
   }
   .timeline-item {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: left;
+    padding: 0;
+    width: 100%;
+  }
+  .timeline-dot {
+    margin: 0 0 10px 0;
+    position: absolute;
+    left: -2rem;
+    top: 5px;
+  }
+  .timeline-year {
+    margin-left: 0;
+  }
+  .timeline-desc {
+    margin-left: 0;
+    max-width: 100%;
   }
   .timeline-container::before {
     width: 4px;
-    height: 100%;
-    left: 10px;
-    top: 0;
+    height: calc(100% - 40px);
+    left: calc(-2rem + 8px);
+    top: 25px;
   }
   table {
     font-size: 0.9rem;
