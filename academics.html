@@ -17,7 +17,6 @@
   <meta name="twitter:description" content="Aayush Parikh's academic achievements, AP classes, and STEM journey.">
   
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   
@@ -45,32 +44,58 @@
   <main>
     <p>I approach academics with the same mindset I bring to tennis—consistent effort and curiosity. My main focus is STEM, but I also value a balanced education that includes language, music, and the humanities.</p>
 
-    <h2>Research Publication</h2>
-    <p><strong>"Reduction of Red Light Waiting Times Using An Adaptive Traffic Optimization Model (ATOM)"</strong></p>
-    <p>Co-authored with Kavish Parikh | Published in the <a href="https://www.oxfordjss.org/february-2026-vol-4-issue-1-1/reduction-of-red-light-waiting-times-using-an-adaptive-traffic-optimization-model-(atom)" target="_blank">Oxford Journal of Student Scholarship</a>, February 2026</p>
-    <p>This research presents a scalable model to optimize traffic signal timing in high-density areas. Using heuristic and exhaustive algorithms, ATOM demonstrated a 15% reduction in red light wait times compared to fixed-time systems, translating to fuel savings, lower carbon emissions, and improved travel efficiency. The paper details synthetic data generation mimicking suburban traffic patterns and validates the algorithm through detailed simulations.</p>
-
     <h2>Coursework and APs</h2>
-    <p>Algebra 1 & 2, Geometry, AP Precalculus (5), AP Statistics (5), AP Physics 1 (5), AP Human Geography (5), AP Computer Science A (4)</p>
-    <p>Currently enrolled in AP Calculus BC and Advanced Computer Science 3</p>
-
-    <h2>Certifications</h2>
-    <ul>
-      <li><strong>MITx:</strong> 6.002.1x: Circuits and Electronics 1: Basic Circuit Analysis (Completed February 12, 2026) [cite: 5, 8]</li>
-      <li><strong>MIT Beaver Works:</strong> Prerequisite Course for Unmanned Air System-Synthetic Aperture Radar (Completed February 28, 2026) [cite: 21, 22]</li>
-      <li><strong>MIT Beaver Works:</strong> Prerequisite Course for Version Control and UNIX (Completed March 3, 2026) [cite: 82]</li>
-      <li><strong>MIT Beaver Works:</strong> Prerequisite Course Python Core (Completed March 31, 2026) [cite: 50, 51]</li>
-    </ul>
+    <p>Algebra 1 &amp; 2, Geometry, AP Precalculus (5), AP Statistics (5), AP Physics 1 (5), AP Human Geography (5), AP Computer Science A (4)</p>
+    <p>Currently enrolled in AP Calculus BC and Advanced Computer Science 1</p>
 
     <h2>Achievements</h2>
     <ul>
       <li>SAT: 1570</li>
+      <li>National Honor Society (NHS)</li>
       <li>National Junior Honor Society (NJHS)</li>
-      <li>Published Research Author</li>
+      <li>NOCTI Certified – Foundational Knowledge-Based Written</li>
     </ul>
 
+    <h2>Certifications</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Certification</th>
+          <th>Issuer</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>6.002.1x: Circuits and Electronics 1 – Basic Circuit Analysis</td>
+          <td>MITx (edX)</td>
+          <td>February 2026</td>
+        </tr>
+        <tr>
+          <td>Prerequisite Course for Unmanned Air System–Synthetic Aperture Radar</td>
+          <td>MIT Beaver Works Summer Institute</td>
+          <td>February 2026</td>
+        </tr>
+        <tr>
+          <td>Prerequisite Course for Version Control and UNIX</td>
+          <td>MIT Beaver Works Summer Institute</td>
+          <td>March 2026</td>
+        </tr>
+        <tr>
+          <td>Prerequisite Course Python Core</td>
+          <td>MIT Beaver Works Summer Institute</td>
+          <td>March 2026</td>
+        </tr>
+        <tr>
+          <td>Cybersecurity Essentials for Work Training</td>
+          <td>CareerSafe</td>
+          <td>April 2026</td>
+        </tr>
+      </tbody>
+    </table>
+
     <h2>STEM Journey</h2>
-    <p>My interest in STEM began early. In third grade, I joined FIRST LEGO League (FLL), where my team competed against college-level groups. By middle school, I was building and programming EV3 robots to complete household tasks like mopping. Later, I learned Python and experimented with Raspberry Pi, exploring how software can interact with the real world.</p>
+    <p>My interest in STEM began early. In third grade, I joined FIRST LEGO League (FLL), where my team competed against college-level groups. By middle school, I was building and programming EV3 robots to complete household tasks like mopping. Later, I learned Python and experimented with Raspberry Pi, exploring how software can interact with the real world. More recently, I've pursued college-level coursework through MITx and MIT's Beaver Works Summer Institute, studying everything from circuit analysis to drone systems and version control.</p>
     
     <div class="timeline-container">
       <div class="timeline-item">
@@ -81,17 +106,17 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <p class="timeline-year">4th–7th Grade</p>
-        <p class="timeline-desc">Built & programmed an EV3 robot</p>
+        <p class="timeline-desc">Built &amp; programmed an EV3 robot</p>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <p class="timeline-year">Middle–High School</p>
-        <p class="timeline-desc">Learned Python & Raspberry Pi</p>
+        <p class="timeline-desc">Learned Python &amp; Raspberry Pi</p>
       </div>
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <p class="timeline-year">Senior Year</p>
-        <p class="timeline-desc">Published traffic optimization research</p>
+        <p class="timeline-year">2026</p>
+        <p class="timeline-desc">MITx &amp; MIT BWSI certifications in circuits, drones, Python, and cybersecurity</p>
       </div>
     </div>
 
@@ -108,44 +133,21 @@
   </footer>
   <button id="backToTop" title="Back to top">↑</button>
   <script>
-    // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
-    
-    // Check for saved theme preference or default to dark mode
     const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') {
-      body.classList.add('light-mode');
-    }
-    
+    if (currentTheme === 'light') body.classList.add('light-mode');
     themeToggle.addEventListener('click', () => {
       body.classList.toggle('light-mode');
-      
-      if (body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-      } else {
-        localStorage.setItem('theme', 'dark');
-      }
+      localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
     });
-    
-    // Back to Top Button
     const backToTopButton = document.getElementById('backToTop');
-    
     window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 150) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
+      backToTopButton.classList.toggle('show', window.pageYOffset > 150);
     });
-    
     backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
-
 </body>
 </html>
