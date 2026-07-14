@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aayush Parikh | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
   <header>
-    <button id="themeToggle" title="Toggle Mode">🌙</button>
     <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button active">Home</a>
@@ -23,7 +22,20 @@
   </header>
   
   <main>
-    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Hi, I'm Aayush Parikh, a senior at Westwood High School. I'm passionate about STEM and tennis, and I believe in steady progress through consistent effort and curiosity.</p>
+    <div class="hero-wrapper">
+      <div class="hero-text">
+        <h2 style="font-size: 3rem; margin-bottom: 1rem;">Engineering the Future.</h2>
+        <p style="font-size: 1.2rem;">Hi, I'm Aayush Parikh. I am a senior at Westwood High School bridging the gap between rigorous STEM academics and elite athletics. I believe in steady progress through consistent effort, precision, and curiosity.</p>
+        
+        <a href="academics.html" class="button" style="display: inline-block; background: var(--accent-gradient); color: white; padding: 0.8rem 2rem; border-radius: 30px; font-weight: 600; margin-top: 1rem; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);">Explore My Work</a>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="image-frame">
+          <img src="profile.jpg" alt="Aayush Parikh">
+        </div>
+      </div>
+    </div>
 
     <div class="card-grid">
       <div class="card">
@@ -44,22 +56,8 @@
     </div>
   </main>
 
-  <footer>© 2025 Aayush Parikh. All rights reserved.</footer>
-
-  <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      html.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-    });
-  </script>
+  <footer style="text-align: center; padding: 3rem; color: #64748b; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.05);">
+    © 2025 Aayush Parikh. All rights reserved.
+  </footer>
 </body>
 </html>
