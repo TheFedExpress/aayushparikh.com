@@ -1,159 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aayush Parikh | Portfolio</title>
-  <meta name="description" content="Aayush Parikh: STEM Scholar, State Champion Tennis Player, and Nonprofit Director.">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Aayush Parikh | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DEYPJK1WW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7DEYPJK1WW');
-  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-content">
-      <a href="#home" class="logo">Aayush Parikh</a>
-      <div class="nav-links">
-        <a href="#academics">Academics</a>
-        <a href="#tennis">Athletics</a>
-        <a href="#leadership">Leadership</a>
-        <a href="#contact">Contact</a>
-        <button id="themeToggle" title="Toggle Mode">🌙</button>
-      </div>
-    </div>
-  </nav>
+  <header>
+    <button id="themeToggle" title="Toggle Mode">🌙</button>
+    <h1>Aayush Parikh</h1>
+    <nav class="top-buttons">
+      <a href="index.html" class="button active">Home</a>
+      <a href="tennis.html" class="button">Tennis</a>
+      <a href="academics.html" class="button">Academics</a>
+      <a href="volunteering.html" class="button">Volunteering</a>
+      <a href="extracurriculars.html" class="button">Extracurriculars</a>
+      <a href="contact.html" class="button">Contact</a>
+    </nav>
+  </header>
+  
+  <main>
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Hi, I'm Aayush Parikh, a senior at Westwood High School. I'm passionate about STEM and tennis, and I believe in steady progress through consistent effort and curiosity.</p>
 
-  <section id="home" class="hero">
-    <div class="hero-container">
-      <div class="hero-text">
-        <h1>Hi, I'm Aayush Parikh.</h1>
-        <p class="subtitle">A senior at Westwood High School bridging the gap between physical endurance on the tennis court and logical precision in STEM.</p>
-        
-        <div class="quick-stats">
-          <span class="stat-badge">🎯 SAT: 1570</span>
-          <span class="stat-badge">🎾 State Tennis Champion</span>
-          <span class="stat-badge">💻 MIT BWSI Certified</span>
-        </div>
-
-        <div class="hero-buttons">
-          <a href="#academics" class="btn btn-primary">View Portfolio</a>
-          <a href="resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a> 
-        </div>
-      </div>
-      <div class="hero-image-placeholder">
-        <img src="profile.jpg" alt="Aayush Parikh" onerror="this.style.display='none'">
-        <div class="img-fallback">Profile Image</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="academics" class="section">
-    <h2 class="section-title">Academics & STEM</h2>
-    <p class="section-desc">My interest in engineering stems from my father's work in Mixed-Signal SoCs. I thrive in rigorous coursework and hands-on robotics.</p>
-    
-    <div class="grid">
+    <div class="card-grid">
       <div class="card">
-        <h3>Coursework & Scores</h3>
-        <ul>
-          <li><strong>AP Scores (5):</strong> Precalculus, Statistics, Physics 1, Human Geography</li>
-          <li><strong>AP Scores (4):</strong> Computer Science A</li>
-          <li><strong>Current:</strong> AP Calculus BC, Advanced CS 1</li>
-        </ul>
-      </div>
-      
-      <div class="card">
-        <h3>MIT Certifications</h3>
-        <ul>
-          <li>Circuits & Electronics 1 (MITx)</li>
-          <li>Unmanned Air System–Synthetic Aperture Radar (BWSI)</li>
-          <li>Version Control and UNIX (BWSI)</li>
-          <li>Python Core (BWSI)</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Projects & Research</h3>
-        <ul>
-          <li>Published in Oxford Journal of Student Scholarship</li>
-          <li>Programmed EV3 robots for complex household automation</li>
-          <li>Python & Raspberry Pi hardware integration</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="tennis" class="section alt-bg">
-    <h2 class="section-title">Athletics: Tennis</h2>
-    <p class="section-desc">Two-year Team Captain. State Champion. Ranked #30 in Texas (Boys' 16s).</p>
-    
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Junior Year (Westwood HS)</h3>
-          <p><strong>Team Captain.</strong> State Runner-Up (Team). Qualified for State in Solo Doubles.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Sophomore Year (Westwood HS)</h3>
-          <p><strong>State Championship Winner (Team).</strong> Advanced to second round of Regionals in Solo Singles.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-content">
-          <h3>Freshman Year (Round Rock HS)</h3>
-          <p>Youngest player on the varsity team. Advanced to second round of Districts.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="leadership" class="section">
-    <h2 class="section-title">Leadership & Service</h2>
-    <div class="grid two-col">
-      <div class="card">
-        <h3>Director, First Racquet (Austin)</h3>
-        <p>I direct the Austin branch of First Racquet, a nonprofit making tennis accessible. I've organized charity tournaments and led donation drives, successfully shipping rackets, clothing, and gear to underprivileged children in Angola. Leadership to me is about consistent action and creating opportunities for others.</p>
+        <h3>Academics & STEM</h3>
+        <p>SAT 1570, National Honor Society, and advanced MITx/BWSI certifications in Python, Version Control, and Circuit Analysis.</p>
+        <a href="academics.html">View Academics →</a>
       </div>
       <div class="card">
-        <h3>Extracurricular Discipline</h3>
-        <p>Beyond tennis and STEM, I am a <strong>Black Belt in Taekwondo</strong>, which instilled my core foundation of respect and mental focus. I was a district-level track runner (1600m/2400m), have played the cello in Orchestra for 4 years, and can solve a Rubik's cube in under 30 seconds.</p>
+        <h3>Athletics: Tennis</h3>
+        <p>Two-year Team Captain, State Championship Winner, and USTA ranked #30 in Texas (Boys' 16s).</p>
+        <a href="tennis.html">View Tennis Record →</a>
+      </div>
+      <div class="card">
+        <h3>Leadership & Service</h3>
+        <p>Director of First Racquet Austin branch—organizing charity tournaments and shipping equipment to underprivileged kids.</p>
+        <a href="volunteering.html">View Volunteering →</a>
       </div>
     </div>
-  </section>
+  </main>
 
-  <section id="contact" class="section alt-bg">
-    <div class="contact-card">
-      <h2>Let's Connect</h2>
-      <p>I am actively seeking college admission opportunities where I can contribute to rigorous academic and athletic programs.</p>
-      <div class="contact-links">
-        <a href="mailto:parikhaayush@gmail.com" class="btn btn-primary">parikhaayush@gmail.com</a>
-        <a href="https://linkedin.com/in/parikh-aayush" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
-        <a href="https://www.tennisrecruiting.net/player.asp?id=985097" target="_blank" class="btn btn-secondary">Tennis Recruiting</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Aayush Parikh. All rights reserved.</p>
-  </footer>
-
-  <button id="backToTop" title="Back to top">↑</button>
+  <footer>© 2025 Aayush Parikh. All rights reserved.</footer>
 
   <script>
-    // Theme Toggle Logic
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    
-    // Default to light mode for professional apps, but respect saved preference
     const savedTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
     themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
@@ -165,14 +60,6 @@
       localStorage.setItem('theme', newTheme);
       themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
-
-    // Back to top button
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) backToTop.classList.add('show');
-      else backToTop.classList.remove('show');
-    });
-    backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
   </script>
 </body>
 </html>
