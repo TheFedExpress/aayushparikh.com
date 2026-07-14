@@ -4,43 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tennis | Aayush Parikh</title>
-  <meta name="description" content="Aayush Parikh's tennis journey, achievements, rankings, and milestones throughout high school.">
-  <meta name="keywords" content="Aayush Parikh, tennis, Westwood High School, Round Rock, achievements, matches">
-  <meta name="author" content="Aayush Parikh">
-  
-  <meta property="og:title" content="Tennis | Aayush Parikh">
-  <meta property="og:description" content="Aayush Parikh's tennis journey, achievements, and USTA rankings.">
-  <meta property="og:url" content="https://www.aayushparikh.com/tennis.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tennis | Aayush Parikh">
-  <meta name="twitter:description" content="Aayush Parikh's tennis journey, achievements, and USTA rankings.">
-  
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DEYPJK1WW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7DEYPJK1WW');
-  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <div id="themeToggle" title="Toggle dark/light mode"></div>
-  
   <header>
-    <h1>Tennis</h1>
+    <button id="themeToggle" title="Toggle Mode">🌙</button>
+    <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
       <a href="tennis.html" class="button active">Tennis</a>
       <a href="academics.html" class="button">Academics</a>
       <a href="volunteering.html" class="button">Volunteering</a>
       <a href="extracurriculars.html" class="button">Extracurriculars</a>
+      <a href="contact.html" class="button">Contact</a>
     </nav>
   </header>
+  
   <main>
     <h2>High School Tennis Journey</h2>
     <table>
@@ -80,8 +61,8 @@
         <tr>
           <td>Junior</td>
           <td>Westwood High School</td>
-          <td>Solo – Doubles<br><strong>Team Captain</strong></td>
-          <td>Qualified for State</td>
+          <td>Solo – Doubles</td>
+          <td>Qualified for State<br><strong>Team Captain</strong></td>
         </tr>
       </tbody>
     </table>
@@ -96,53 +77,43 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Boys' 12s</td>
-          <td>#461</td>
-          <td>#43</td>
-        </tr>
-        <tr>
-          <td>Boys' 14s</td>
-          <td>#255</td>
-          <td>#32</td>
-        </tr>
-        <tr>
-          <td>Boys' 16s</td>
-          <td>#314</td>
-          <td>#30</td>
-        </tr>
+        <tr><td>Boys' 12s</td><td>#461</td><td>#43</td></tr>
+        <tr><td>Boys' 14s</td><td>#255</td><td>#32</td></tr>
+        <tr><td>Boys' 16s</td><td>#314</td><td>#30</td></tr>
       </tbody>
     </table>
     
-    <h2>Freshman Year</h2>
-    <p>I joined the Round Rock High School varsity team as the youngest player, competing in singles. I advanced through the early rounds of the solo season before losing in the second round of Districts.</p>
-    
-    <h2>Sophomore Year</h2>
-    <p>I transferred to Westwood High School, a program known for its intensity and discipline. In the team season, we went on to win the state championship. In the solo season, I competed in singles and advanced to the second round of Regionals.</p>
-    
-    <h2>Junior Year</h2>
-    <p>I was named team captain. In the team season, we fell just short of repeating as champions, finishing as state runner-up. In the solo season, I competed in doubles and qualified for state, a milestone I'm proud of. Leadership, I've found, is less about giving instructions and more about setting an example through composure, integrity, and effort.</p>
-    
+    <div class="card-grid">
+      <div class="card">
+        <h3>Freshman Year</h3>
+        <p>Joined the Round Rock High School varsity team as the youngest player, competing in singles. Advanced through the early rounds of the solo season before losing in the second round of Districts.</p>
+      </div>
+      <div class="card">
+        <h3>Sophomore Year</h3>
+        <p>Transferred to Westwood High School, a program known for its intensity and discipline. In the team season, we went on to win the state championship. In the solo season, I competed in singles and advanced to the second round of Regionals.</p>
+      </div>
+      <div class="card">
+        <h3>Junior Year</h3>
+        <p>Named team captain. In the team season, we fell just short of repeating as champions, finishing as state runner-up. In the solo season, I competed in doubles and qualified for state. Leadership is less about giving instructions and more about setting an example through composure, integrity, and effort.</p>
+      </div>
+    </div>
   </main>
-  <footer>
-    © 2025 Aayush Parikh. All rights reserved.
-  </footer>
-  <button id="backToTop" title="Back to top">↑</button>
+
+  <footer>© 2025 Aayush Parikh. All rights reserved.</footer>
+
   <script>
     const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') body.classList.add('light-mode');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
     themeToggle.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
-    });
-    const backToTopButton = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      backToTopButton.classList.toggle('show', window.pageYOffset > 150);
-    });
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
   </script>
 </body>
