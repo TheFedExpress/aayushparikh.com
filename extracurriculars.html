@@ -4,107 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Extracurriculars | Aayush Parikh</title>
-  <meta name="description" content="Aayush Parikh's extracurricular activities including taekwondo, track, soccer, hobbies, and outdoor adventures.">
-  <meta name="keywords" content="Aayush Parikh, extracurriculars, taekwondo, track, soccer, Rubik's cube, hiking, camping, hobbies">
-  <meta name="author" content="Aayush Parikh">
-  
-  <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="Extracurriculars | Aayush Parikh">
-  <meta property="og:description" content="Aayush Parikh's extracurricular activities and hobbies.">
-  <meta property="og:url" content="https://www.aayushparikh.com/extracurriculars.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Extracurriculars | Aayush Parikh">
-  <meta name="twitter:description" content="Aayush Parikh's extracurricular activities and hobbies.">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DEYPJK1WW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7DEYPJK1WW');
-  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <!-- Theme Toggle Button -->
-  <div id="themeToggle" title="Toggle dark/light mode"></div>
-  
   <header>
-    <h1>Extracurriculars</h1>
+    <button id="themeToggle" title="Toggle Mode">🌙</button>
+    <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
       <a href="tennis.html" class="button">Tennis</a>
       <a href="academics.html" class="button">Academics</a>
       <a href="volunteering.html" class="button">Volunteering</a>
       <a href="extracurriculars.html" class="button active">Extracurriculars</a>
+      <a href="contact.html" class="button">Contact</a>
     </nav>
   </header>
+  
   <main>
-    <h2>Athletics</h2>
-    
-    <h3>Taekwondo</h3>
-    <p>I earned my black belt in taekwondo, a discipline that taught me focus, control, and respect. The training instilled in me the importance of mental strength and self-discipline—qualities that carry over into everything I do.</p>
-    
-    <h3>Track & Field</h3>
-    <p>In both 7th and 8th grade, I competed for my middle school track team at the district level. I was the fastest runner in my school for both the 1600m and 2400m events, pushing myself to maintain endurance and speed over distance.</p>
-    
-    <h3>Soccer</h3>
-    <p>I played soccer for several years, developing teamwork skills and learning how to read the game. While I no longer play competitively, I still enjoy staying active and playing for fun.</p>
+    <h2>Athletics & Discipline</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Taekwondo</h3>
+        <p>I earned my black belt in taekwondo, a discipline that taught me focus, control, and respect. The training instilled in me the importance of mental strength and self-discipline—qualities that carry over into everything I do.</p>
+      </div>
+      <div class="card">
+        <h3>Track & Field</h3>
+        <p>In both 7th and 8th grade, I competed for my middle school track team at the district level. I was the fastest runner in my school for both the 1600m and 2400m events, pushing myself to maintain endurance and speed over distance.</p>
+      </div>
+    </div>
 
     <h2>Hobbies & Interests</h2>
-    <p>Outside of athletics and academics, I love hiking and camping, especially challenging trips like summiting Angel's Landing in Zion National Park or camping in freezing temperatures with my dad. These outdoor adventures test both physical endurance and mental resilience.</p>
-    <p>At home, I often unwind by reading fiction or timing myself on the Rubik's cube, which I can solve in under thirty seconds. These hobbies may seem small, but they keep me grounded and remind me that focus can turn into progress in almost anything.</p>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Outdoor Adventures</h3>
+        <p>I love hiking and camping, especially challenging trips like summiting Angel's Landing in Zion National Park or camping in freezing temperatures with my dad. These trips test both physical endurance and mental resilience.</p>
+      </div>
+      <div class="card">
+        <h3>Mental Puzzles & Music</h3>
+        <p>At home, I unwind by timing myself on the Rubik's cube, which I can solve in under thirty seconds. I also have played in the Orchestra for 4 years. These hobbies remind me that focus can turn into progress in almost anything.</p>
+      </div>
+    </div>
   </main>
-  <footer>
-    © 2025 Aayush Parikh. All rights reserved.
-  </footer>
-  <button id="backToTop" title="Back to top">↑</button>
+
+  <footer>© 2025 Aayush Parikh. All rights reserved.</footer>
+
   <script>
-    // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    // Check for saved theme preference or default to dark mode
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') {
-      body.classList.add('light-mode');
-    }
-    
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
     themeToggle.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      
-      if (body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-      } else {
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-    
-    // Back to Top Button
-    const backToTopButton = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 150) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-    
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
   </script>
-
 </body>
 </html>
