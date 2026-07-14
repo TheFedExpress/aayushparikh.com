@@ -4,57 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Academics | Aayush Parikh</title>
-  <meta name="description" content="Aayush Parikh's academic journey, AP classes, STEM projects, electives, and honors.">
-  <meta name="keywords" content="Aayush Parikh, Academics, AP classes, STEM, NJHS, NHS, electives">
-  <meta name="author" content="Aayush Parikh">
-  
-  <meta property="og:title" content="Academics | Aayush Parikh">
-  <meta property="og:description" content="Aayush Parikh's academic achievements, AP classes, and STEM journey.">
-  <meta property="og:url" content="https://www.aayushparikh.com/academics.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Academics | Aayush Parikh">
-  <meta name="twitter:description" content="Aayush Parikh's academic achievements, AP classes, and STEM journey.">
-  
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DEYPJK1WW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7DEYPJK1WW');
-  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <div id="themeToggle" title="Toggle dark/light mode"></div>
-  
   <header>
-    <h1>Academics</h1>
+    <button id="themeToggle" title="Toggle Mode">🌙</button>
+    <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
       <a href="tennis.html" class="button">Tennis</a>
       <a href="academics.html" class="button active">Academics</a>
       <a href="volunteering.html" class="button">Volunteering</a>
       <a href="extracurriculars.html" class="button">Extracurriculars</a>
+      <a href="contact.html" class="button">Contact</a>
     </nav>
   </header>
+  
   <main>
-    <p>I approach academics with the same mindset I bring to tennis—consistent effort and curiosity. My main focus is STEM, but I also value a balanced education that includes language, music, and the humanities.</p>
+    <p>I approach academics with the same mindset I bring to tennis—consistent effort and curiosity. My main focus is STEM, but I also value a balanced education.</p>
 
-    <h2>Coursework and APs</h2>
-    <p>Algebra 1 &amp; 2, Geometry, AP Precalculus (5), AP Statistics (5), AP Physics 1 (5), AP Human Geography (5), AP Computer Science A (4)</p>
-    <p>Currently enrolled in AP Calculus BC and Advanced Computer Science 1</p>
-
-    <h2>Achievements</h2>
-    <ul>
-      <li>SAT: 1570</li>
-      <li>National Honor Society (NHS)</li>
-      <li>National Junior Honor Society (NJHS)</li>
-      <li>NOCTI Certified – Foundational Knowledge-Based Written</li>
-    </ul>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Coursework & APs</h3>
+        <ul>
+          <li><strong>Score of 5:</strong> AP Precalculus, AP Statistics, AP Physics 1, AP Human Geography</li>
+          <li><strong>Score of 4:</strong> AP Computer Science A</li>
+          <li><strong>Current:</strong> AP Calculus BC, Adv. Computer Science 1</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>General Achievements</h3>
+        <ul>
+          <li><strong>SAT:</strong> 1570</li>
+          <li>National Honor Society (NHS & NJHS)</li>
+          <li>NOCTI Certified – Foundational Knowledge-Based Written</li>
+        </ul>
+      </div>
+    </div>
 
     <h2>Certifications</h2>
     <table>
@@ -62,92 +50,21 @@
         <tr>
           <th>Certification</th>
           <th>Issuer</th>
-          <th>Date</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>6.002.1x: Circuits and Electronics 1 – Basic Circuit Analysis</td>
-          <td>MITx (edX)</td>
-          <td>February 2026</td>
-        </tr>
-        <tr>
-          <td>Prerequisite Course for Unmanned Air System–Synthetic Aperture Radar</td>
-          <td>MIT Beaver Works Summer Institute</td>
-          <td>February 2026</td>
-        </tr>
-        <tr>
-          <td>Prerequisite Course for Version Control and UNIX</td>
-          <td>MIT Beaver Works Summer Institute</td>
-          <td>March 2026</td>
-        </tr>
-        <tr>
-          <td>Prerequisite Course Python Core</td>
-          <td>MIT Beaver Works Summer Institute</td>
-          <td>March 2026</td>
-        </tr>
-        <tr>
-          <td>Cybersecurity Essentials for Work Training</td>
-          <td>CareerSafe</td>
-          <td>April 2026</td>
-        </tr>
+        <tr><td>Circuits and Electronics 1</td><td>MITx (edX)</td></tr>
+        <tr><td>Unmanned Air System–Synthetic Aperture Radar</td><td>MIT Beaver Works</td></tr>
+        <tr><td>Version Control and UNIX</td><td>MIT Beaver Works</td></tr>
+        <tr><td>Python Core</td><td>MIT Beaver Works</td></tr>
+        <tr><td>Cybersecurity Essentials</td><td>CareerSafe</td></tr>
       </tbody>
     </table>
 
     <h2>STEM Journey</h2>
-    <p>My interest in STEM began early. In third grade, I joined FIRST LEGO League (FLL), where my team competed against college-level groups. By middle school, I was building and programming EV3 robots to complete household tasks like mopping. Later, I learned Python and experimented with Raspberry Pi, exploring how software can interact with the real world. More recently, I've pursued college-level coursework through MITx and MIT's Beaver Works Summer Institute, studying everything from circuit analysis to drone systems and version control.</p>
-    
-    <div class="timeline-container">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-year">3rd Grade</p>
-        <p class="timeline-desc">Participated in FIRST LEGO League (FLL)</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-year">4th–7th Grade</p>
-        <p class="timeline-desc">Built &amp; programmed an EV3 robot</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-year">Middle–High School</p>
-        <p class="timeline-desc">Learned Python &amp; Raspberry Pi</p>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-year">2026</p>
-        <p class="timeline-desc">MITx &amp; MIT BWSI certifications in circuits, drones, Python, and cybersecurity</p>
-      </div>
-    </div>
-
-    <h2>Electives</h2>
-    <ul>
-      <li>3 years of Spanish</li>
-      <li>4 years of Orchestra</li>
-    </ul>
-
-    <p>I enjoy the logic behind mathematics and the creativity within engineering. Both remind me that the best solutions come from patience and precision.</p>
+    <p>My interest in STEM began early with FIRST LEGO League (FLL). By middle school, I was building and programming EV3 robots. Later, I learned Python and experimented with Raspberry Pi, exploring how software can interact with the real world.</p>
   </main>
-  <footer>
-    © 2025 Aayush Parikh. All rights reserved.
-  </footer>
-  <button id="backToTop" title="Back to top">↑</button>
-  <script>
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') body.classList.add('light-mode');
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
-    });
-    const backToTopButton = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      backToTopButton.classList.toggle('show', window.pageYOffset > 150);
-    });
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-</body>
+
+  <footer>© 2025 Aayush Parikh. All rights reserved.</footer>
+  </body>
 </html>
