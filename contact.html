@@ -3,41 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aayush Parikh | Contact</title>
-  <meta name="description" content="Contact Aayush Parikh via email or LinkedIn.">
-  <meta name="keywords" content="Aayush Parikh, contact, email, LinkedIn">
-  <meta name="author" content="Aayush Parikh">
-  
-  <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="Contact | Aayush Parikh">
-  <meta property="og:description" content="Get in touch with Aayush Parikh via email or LinkedIn.">
-  <meta property="og:url" content="https://www.aayushparikh.com/contact.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Contact | Aayush Parikh">
-  <meta name="twitter:description" content="Get in touch with Aayush Parikh via email or LinkedIn.">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Contact | Aayush Parikh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DEYPJK1WW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7DEYPJK1WW');
-  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <!-- Theme Toggle Button -->
-  <div id="themeToggle" title="Toggle dark/light mode"></div>
-  
   <header>
-    <h1>Contact</h1>
+    <button id="themeToggle" title="Toggle Mode">🌙</button>
+    <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
       <a href="tennis.html" class="button">Tennis</a>
@@ -47,58 +21,36 @@
       <a href="contact.html" class="button active">Contact</a>
     </nav>
   </header>
-  <main>
-    <p>Thank you for visiting my website. I'm always open to connecting about tennis, academics, or new opportunities.</p>
-    <p>For tournament records, match history, and rankings, visit my <a href="https://www.tennisrecruiting.net/player.asp?id=985097" target="_blank">Tennis Recruiting profile</a>.</p>
-    <p>You can also reach me directly via email at <a href="mailto:parikhaayush@gmail.com">parikhaayush@gmail.com</a> or connect with me professionally on <a href="https://linkedin.com/in/parikh-aayush" target="_blank">LinkedIn</a>. I aim to respond within a few days.</p>
+  
+  <main style="text-align: center; max-width: 600px; padding-top: 5rem;">
+    <h2>Let's Connect</h2>
+    <p>Thank you for visiting my website. I'm always open to connecting about tennis, academics, or new opportunities. I aim to respond within a few days.</p>
+    
+    <div class="card" style="margin-top: 2rem;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 1rem;"><strong>Email:</strong> <a href="mailto:parikhaayush@gmail.com">parikhaayush@gmail.com</a></li>
+        <li style="margin-bottom: 1rem;"><strong>Professional:</strong> <a href="https://linkedin.com/in/parikh-aayush" target="_blank">LinkedIn Profile</a></li>
+        <li><strong>Athletics:</strong> <a href="https://www.tennisrecruiting.net/player.asp?id=985097" target="_blank">Tennis Recruiting Profile</a></li>
+      </ul>
+    </div>
   </main>
-  <footer>
-    © 2025 Aayush Parikh. All rights reserved.
-  </footer>
-  <button id="backToTop" title="Back to top">↑</button>
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    // Check for saved theme preference or default to dark mode
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') {
-      body.classList.add('light-mode');
-    }
-    
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      
-      if (body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-      } else {
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-    
-    // Back to Top Button
-    const backToTopButton = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 150) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-    
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  </script>
-behavior: 'smooth'
-      });
-    });
-  </script>
 
+  <footer style="margin-top: auto;">© 2025 Aayush Parikh. All rights reserved.</footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
 </body>
 </html>
