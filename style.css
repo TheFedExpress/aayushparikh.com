@@ -15,30 +15,20 @@
 }
 
 [data-theme="dark"] {
-  /* Dark Mode (Sleek, Modern) */
+  /* Dark Mode */
   --bg-color: #0f172a;
   --bg-alt: #1e293b;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  --accent: #3b82f6; /* Lighter blue for dark mode visibility */
+  --accent: #3b82f6;
   --accent-hover: #60a5fa;
   --card-bg: #1e293b;
   --border: #334155;
   --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
-/* ==========================
-   Global
-========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', sans-serif;
@@ -46,6 +36,9 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 h1, h2, h3, .logo {
@@ -53,356 +46,114 @@ h1, h2, h3, .logo {
   color: var(--text-main);
 }
 
-a {
-  text-decoration: none;
-  color: var(--accent);
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: var(--accent-hover);
-}
+a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-hover); }
 
 /* ==========================
    Navigation
 ========================== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
+header {
   background: var(--bg-alt);
   border-bottom: 1px solid var(--border);
-  z-index: 1000;
-  padding: 1rem 0;
+  padding: 1.5rem 2rem;
+  text-align: center;
 }
 
-.nav-content {
-  max-width: 1100px;
-  margin: 0 auto;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.top-buttons {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-.nav-links a {
-  color: var(--text-muted);
-  font-weight: 500;
-  font-size: 0.95rem;
-}
-
-.nav-links a:hover {
-  color: var(--accent);
-}
-
-#themeToggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-}
-
-/* ==========================
-   Buttons
-========================== */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
+.top-buttons .button {
+  padding: 0.5rem 1.2rem;
   border-radius: 8px;
   font-weight: 500;
+  color: var(--text-muted);
+  border: 1px solid transparent;
   transition: all 0.2s;
 }
 
-.btn-primary {
-  background-color: var(--accent);
-  color: #fff !important;
-  border: 2px solid var(--accent);
-}
-
-.btn-primary:hover {
-  background-color: var(--accent-hover);
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background-color: transparent;
-  color: var(--text-main) !important;
-  border: 2px solid var(--border);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent) !important;
-}
-
-/* ==========================
-   Layout & Sections
-========================== */
-.section {
-  padding: 6rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.alt-bg {
-  background-color: var(--bg-alt);
-  max-width: 100%;
-  padding: 6rem 0;
-}
-
-.alt-bg > * {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.section-desc {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 3rem;
-  max-width: 700px;
-}
-
-/* ==========================
-   Hero Section
-========================== */
-.hero {
-  padding-top: 10rem;
-  padding-bottom: 6rem;
-}
-
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 4rem;
-}
-
-.hero-text {
-  flex: 1;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-}
-
-.quick-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-
-.stat-badge {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
+.top-buttons .button:hover {
+  background: var(--border);
   color: var(--text-main);
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 1rem;
+.top-buttons .button.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: var(--shadow);
 }
 
-.hero-image-placeholder {
-  width: 350px;
-  height: 350px;
-  background: var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-image-placeholder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.img-fallback {
-  color: var(--text-muted);
-  font-weight: 500;
+#themeToggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
 /* ==========================
-   Grid & Cards
+   Main Content Layout
 ========================== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  width: 100%;
 }
 
-.two-col {
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+h2 { margin-top: 2rem; margin-bottom: 1rem; font-size: 1.8rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 0.3rem;}
+p, ul { margin-bottom: 1.5rem; color: var(--text-muted); }
+ul { padding-left: 1.5rem; }
+li { margin-bottom: 0.5rem; }
+
+/* Cards for Content */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .card {
   background: var(--card-bg);
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 12px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
+.card h3 { color: var(--accent); margin-bottom: 1rem; font-size: 1.2rem; }
 
-.card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: var(--accent);
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
+thead { background-color: var(--accent); color: white; }
+th, td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+th { font-weight: 600; }
+td strong { color: var(--accent); }
 
-.card ul {
-  padding-left: 1.2rem;
-  color: var(--text-muted);
-}
-
-.card li {
-  margin-bottom: 0.5rem;
-}
-
-/* ==========================
-   Timeline (Tennis)
-========================== */
-.timeline {
-  border-left: 3px solid var(--border);
-  padding-left: 2rem;
-  margin-left: 1rem;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -2.6rem;
-  top: 0;
-  width: 1rem;
-  height: 1rem;
-  background: var(--accent);
-  border-radius: 50%;
-  border: 4px solid var(--bg-alt);
-}
-
-.timeline-content h3 {
-  margin-bottom: 0.5rem;
-}
-
-.timeline-content p {
-  color: var(--text-muted);
-}
-
-/* ==========================
-   Contact & Footer
-========================== */
-.contact-card {
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-card h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.contact-card p {
-  color: var(--text-muted);
-  margin-bottom: 2rem;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
+/* Footer */
 footer {
   text-align: center;
   padding: 2rem;
   border-top: 1px solid var(--border);
   color: var(--text-muted);
-}
-
-/* ==========================
-   Misc & Responsive
-========================== */
-#backToTop {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--accent);
-  color: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s;
-  box-shadow: var(--shadow);
-  z-index: 100;
-}
-
-#backToTop.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-@media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  
-  .quick-stats, .hero-buttons {
-    justify-content: center;
-  }
-
-  .nav-links {
-    display: none; /* In a full build, replace with a hamburger menu */
-  }
-
-  #themeToggle {
-    display: block;
-    position: absolute;
-    right: 2rem;
-    top: 1.2rem;
-  }
+  background: var(--bg-alt);
 }
