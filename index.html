@@ -1,24 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aayush Parikh | Home</title>
-  <meta name="description" content="Hi, I'm Aayush Parikh, a junior at Westwood High School with a deep interest in STEM and a lifelong connection to tennis. I believe in steady progress, whether it's in academics, competition, or personal growth.">
-  <meta name="keywords" content="Aayush Parikh, student, tennis, STEM, volunteering, National Junior Honor Society, AP classes">
-  <meta name="author" content="Aayush Parikh">
+  <title>Aayush Parikh | Portfolio</title>
+  <meta name="description" content="Aayush Parikh: STEM Scholar, State Champion Tennis Player, and Nonprofit Director.">
   
-  <meta property="og:title" content="Aayush Parikh | Home">
-  <meta property="og:description" content="Hi, I'm Aayush Parikh, a junior at Westwood High School with a deep interest in STEM and tennis.">
-  <meta property="og:url" content="https://www.aayushparikh.com">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Aayush Parikh | Home">
-  <meta name="twitter:description" content="Hi, I'm Aayush Parikh, a junior at Westwood High School with a deep interest in STEM and tennis.">
-  
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DEYPJK1WW"></script>
@@ -30,80 +18,161 @@
   </script>
 </head>
 <body>
-  <div id="themeToggle" title="Toggle dark/light mode"></div>
-  
-  <header>
-    <h1>Aayush Parikh</h1>
-    <nav class="top-buttons">
-      <a href="index.html" class="button active">Home</a>
-      <a href="tennis.html" class="button">Tennis</a>
-      <a href="academics.html" class="button">Academics</a>
-      <a href="volunteering.html" class="button">Volunteering</a>
-      <a href="extracurriculars.html" class="button">Extracurriculars</a>
-    </nav>
-  </header>
-  <main>
-    <p>Hi, I'm Aayush Parikh, a senior at Westwood High School. I'm passionate about STEM and tennis, and I believe in steady progress through consistent effort and curiosity.</p>
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="#home" class="logo">Aayush Parikh</a>
+      <div class="nav-links">
+        <a href="#academics">Academics</a>
+        <a href="#tennis">Athletics</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" title="Toggle Mode">🌙</button>
+      </div>
+    </div>
+  </nav>
 
-    <h2>Highlights</h2>
-    <ul>
-      <li><strong>Academics:</strong> SAT 1570 | National Junior Honor Society | 5 AP classes with scores of 4-5 | Published research paper in Oxford Journal of Student Scholarship</li>
-      <li><strong>Tennis:</strong> Two-year Team Captain at Westwood High School | State Championship Qualifier (Senior, Singles) | State Runner-Up (Junior, Team) | State Champion (Sophomore, Team) | USTA ranked #30 in Texas (16s)</li>
-      <li><strong>Leadership:</strong> Director of First Racquet Austin branch—organized charity tournaments and shipped equipment to underprivileged kids in Angola</li>
-      <li><strong>STEM Projects:</strong> Built and programmed EV3 robots | Python & Raspberry Pi experimentation | FIRST LEGO League competitor | MITx & MIT Beaver Works Certified</li>
-      <li><strong>Other Achievements:</strong> Black belt in taekwondo | 4 years of orchestra | Rubik's cube solver (&lt;30 seconds)</li>
-    </ul>
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Hi, I'm Aayush Parikh.</h1>
+        <p class="subtitle">A senior at Westwood High School bridging the gap between physical endurance on the tennis court and logical precision in STEM.</p>
+        
+        <div class="quick-stats">
+          <span class="stat-badge">🎯 SAT: 1570</span>
+          <span class="stat-badge">🎾 State Tennis Champion</span>
+          <span class="stat-badge">💻 MIT BWSI Certified</span>
+        </div>
 
-    <p>My dad, a Senior Digital Designer for Mixed-Signal SoCs, inspired my love for engineering and problem-solving. From building robots in middle school to competing in five-hour tennis matches, I've learned that patience, precision, and resilience drive success.</p>
+        <div class="hero-buttons">
+          <a href="#academics" class="btn btn-primary">View Portfolio</a>
+          <a href="resume.pdf" target="_blank" class="btn btn-secondary">Download Resume</a> 
+        </div>
+      </div>
+      <div class="hero-image-placeholder">
+        <img src="profile.jpg" alt="Aayush Parikh" onerror="this.style.display='none'">
+        <div class="img-fallback">Profile Image</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="academics" class="section">
+    <h2 class="section-title">Academics & STEM</h2>
+    <p class="section-desc">My interest in engineering stems from my father's work in Mixed-Signal SoCs. I thrive in rigorous coursework and hands-on robotics.</p>
     
-    <h2>Contact</h2>
-    <p>Thank you for visiting my website. I'm always open to connecting about tennis, academics, or new opportunities.</p>
-    <p>For tournament records, match history, and rankings, visit my <a href="https://www.tennisrecruiting.net/player.asp?id=985097" target="_blank">Tennis Recruiting profile</a>.</p>
-    <p>You can also reach me directly via email at <a href="mailto:parikhaayush@gmail.com">parikhaayush@gmail.com</a> or connect with me professionally on <a href="https://linkedin.com/in/parikh-aayush" target="_blank">LinkedIn</a>. I aim to respond within a few days.</p>
-  </main>
-  <footer>
-    © 2025 Aayush Parikh. All rights reserved.
-  </footer>
-  <button id="backToTop" title="Back to top">↑</button>
-  <script>
-    // Theme Toggle
-    const themeToggle = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    // Check for saved theme preference or default to dark mode
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') {
-      body.classList.add('light-mode');
-    }
-    
-    themeToggle.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
+    <div class="grid">
+      <div class="card">
+        <h3>Coursework & Scores</h3>
+        <ul>
+          <li><strong>AP Scores (5):</strong> Precalculus, Statistics, Physics 1, Human Geography</li>
+          <li><strong>AP Scores (4):</strong> Computer Science A</li>
+          <li><strong>Current:</strong> AP Calculus BC, Advanced CS 1</li>
+        </ul>
+      </div>
       
-      if (body.classList.contains('light-mode')) {
-        localStorage.setItem('theme', 'light');
-      } else {
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-    
-    // Back to Top Button
-    const backToTopButton = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 150) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-    
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  </script>
+      <div class="card">
+        <h3>MIT Certifications</h3>
+        <ul>
+          <li>Circuits & Electronics 1 (MITx)</li>
+          <li>Unmanned Air System–Synthetic Aperture Radar (BWSI)</li>
+          <li>Version Control and UNIX (BWSI)</li>
+          <li>Python Core (BWSI)</li>
+        </ul>
+      </div>
 
+      <div class="card">
+        <h3>Projects & Research</h3>
+        <ul>
+          <li>Published in Oxford Journal of Student Scholarship</li>
+          <li>Programmed EV3 robots for complex household automation</li>
+          <li>Python & Raspberry Pi hardware integration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="tennis" class="section alt-bg">
+    <h2 class="section-title">Athletics: Tennis</h2>
+    <p class="section-desc">Two-year Team Captain. State Champion. Ranked #30 in Texas (Boys' 16s).</p>
+    
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Junior Year (Westwood HS)</h3>
+          <p><strong>Team Captain.</strong> State Runner-Up (Team). Qualified for State in Solo Doubles.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Sophomore Year (Westwood HS)</h3>
+          <p><strong>State Championship Winner (Team).</strong> Advanced to second round of Regionals in Solo Singles.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Freshman Year (Round Rock HS)</h3>
+          <p>Youngest player on the varsity team. Advanced to second round of Districts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="leadership" class="section">
+    <h2 class="section-title">Leadership & Service</h2>
+    <div class="grid two-col">
+      <div class="card">
+        <h3>Director, First Racquet (Austin)</h3>
+        <p>I direct the Austin branch of First Racquet, a nonprofit making tennis accessible. I've organized charity tournaments and led donation drives, successfully shipping rackets, clothing, and gear to underprivileged children in Angola. Leadership to me is about consistent action and creating opportunities for others.</p>
+      </div>
+      <div class="card">
+        <h3>Extracurricular Discipline</h3>
+        <p>Beyond tennis and STEM, I am a <strong>Black Belt in Taekwondo</strong>, which instilled my core foundation of respect and mental focus. I was a district-level track runner (1600m/2400m), have played the cello in Orchestra for 4 years, and can solve a Rubik's cube in under 30 seconds.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section alt-bg">
+    <div class="contact-card">
+      <h2>Let's Connect</h2>
+      <p>I am actively seeking college admission opportunities where I can contribute to rigorous academic and athletic programs.</p>
+      <div class="contact-links">
+        <a href="mailto:parikhaayush@gmail.com" class="btn btn-primary">parikhaayush@gmail.com</a>
+        <a href="https://linkedin.com/in/parikh-aayush" target="_blank" class="btn btn-secondary">LinkedIn Profile</a>
+        <a href="https://www.tennisrecruiting.net/player.asp?id=985097" target="_blank" class="btn btn-secondary">Tennis Recruiting</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Aayush Parikh. All rights reserved.</p>
+  </footer>
+
+  <button id="backToTop" title="Back to top">↑</button>
+
+  <script>
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    
+    // Default to light mode for professional apps, but respect saved preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+
+    // Back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) backToTop.classList.add('show');
+      else backToTop.classList.remove('show');
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+  </script>
 </body>
 </html>
