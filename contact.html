@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Aayush Parikh: Senior at Westwood High IB World School, published ML researcher, and top 25 Texas varsity tennis player.">
   <title>Contact | Aayush Parikh</title>
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -11,7 +12,7 @@
 <body>
   <div id="scrollProgress"></div>
   <header>
-    <button id="themeToggle" title="Toggle Mode">☀️</button>
+    <button id="themeToggle" title="Toggle Light/Dark Mode" aria-label="Toggle Light and Dark Mode">☀️</button>
     <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
@@ -24,7 +25,7 @@
     </nav>
   </header>
   
-  <main style="text-align: center; max-width: 600px; padding-top: 5rem;">
+  <main class="reveal" style="text-align: center; max-width: 600px; padding-top: 5rem;">
     <h2>Let's Connect</h2>
     <p>Thank you for visiting my website. I'm always open to connecting about tennis, academics, or new opportunities. I aim to respond within a few days.</p>
     
@@ -53,13 +54,29 @@
       localStorage.setItem('theme', newTheme);
       themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
     });
+    
     // Scroll Progress Bar Logic
-window.addEventListener('scroll', () => {
-  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.getElementById('scrollProgress').style.width = scrolled + '%';
-});
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+
+    // Advanced Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); 
+      });
+    }, revealOptions);
+    revealElements.forEach(el => revealOnScroll.observe(el));
   </script>
 </body>
 </html>
