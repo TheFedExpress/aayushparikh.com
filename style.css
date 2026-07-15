@@ -2,7 +2,7 @@
    Futuristic Design Tokens
 ========================== */
 :root {
-  /* Deep Space Backgrounds */
+  /* Dark Space Backgrounds (Default) */
   --bg-base: #050505;
   --bg-surface: #0a0a0a;
   
@@ -12,48 +12,58 @@
   --neon-purple: #7f00ff;
   --accent-gradient: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
   
-  /* Glassmorphism */
+  /* Glassmorphism Dark */
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: blur(16px);
+  --header-glass: rgba(5, 5, 5, 0.7);
   
   /* Text */
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
+  
+  /* Mesh Glow */
+  --mesh-opacity: 0.05;
 }
 
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
+[data-theme="light"] {
+  /* Sleek Light Mode (Apple frosted glass style) */
+  --bg-base: #f4f7fb;
+  --bg-surface: #ffffff;
+  
+  /* Glassmorphism Light */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --header-glass: rgba(244, 247, 251, 0.8);
+  
+  /* Text */
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  
+  /* Mesh Glow */
+  --mesh-opacity: 0.15;
 }
 
-html { 
-  scroll-behavior: smooth; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-/* Ambient Background Glow 
-  Creates a futuristic mesh gradient effect
-*/
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-base);
   background-image: 
-    radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.05), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(127, 0, 255, 0.05), transparent 25%);
+    radial-gradient(circle at 15% 50%, rgba(0, 242, 254, var(--mesh-opacity)), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(127, 0, 255, var(--mesh-opacity)), transparent 25%);
   color: var(--text-main);
   line-height: 1.7;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-h1, h2, h3, .logo {
-  font-family: 'Clash Display', sans-serif;
-}
+h1, h2, h3, .logo { font-family: 'Clash Display', sans-serif; }
 
-/* Gradient Text for Headings */
 h1, h2 {
   background: var(--accent-gradient);
   -webkit-background-clip: text;
@@ -62,16 +72,8 @@ h1, h2 {
   margin-bottom: 1rem;
 }
 
-a { 
-  color: var(--neon-cyan); 
-  text-decoration: none; 
-  transition: all 0.3s ease; 
-}
-
-a:hover { 
-  color: var(--neon-purple); 
-  text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
-}
+a { color: var(--neon-cyan); text-decoration: none; transition: all 0.3s ease; }
+a:hover { color: var(--neon-purple); text-shadow: 0 0 10px rgba(0, 242, 254, 0.5); }
 
 /* ==========================
    Navigation (Floating Header)
@@ -80,12 +82,15 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(5, 5, 5, 0.7);
+  background: var(--header-glass);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid var(--glass-border);
-  padding: 1.5rem 5vw; /* 5vw ensures it NEVER hits the edge */
-  text-align: center;
+  padding: 1.5rem 5vw; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.5s ease;
 }
 
 header h1 {
@@ -98,6 +103,7 @@ header h1 {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .top-buttons .button {
@@ -127,7 +133,30 @@ header h1 {
   box-shadow: 0 4px 15px rgba(127, 0, 255, 0.4);
 }
 
-#themeToggle { display: none; /* Removed for pure dark mode sleekness */ }
+/* Theme Toggle Button */
+#themeToggle {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 1.5rem;
+  right: 5vw;
+}
+
+#themeToggle:hover {
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 15px rgba(127, 0, 255, 0.3);
+  transform: scale(1.1);
+}
 
 /* ==========================
    Main Content & Spacing
@@ -137,27 +166,16 @@ main {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  /* MASSIVE upgrade to margins: 4rem top/bottom, 5vw left/right */
   padding: 4rem 5vw; 
 }
 
-h2 { 
-  font-size: 2rem; 
-  margin-top: 3rem; 
-  border-bottom: none; /* Removed basic line for a cleaner look */
-}
-
-p, ul { 
-  color: var(--text-muted); 
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
+h2 { font-size: 2rem; margin-top: 3rem; }
+p, ul { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
 ul { padding-left: 1.5rem; }
 li { margin-bottom: 0.8rem; }
 
 /* ==========================
-   Hero Section (Home Page)
+   Hero Section 
 ========================== */
 .hero-wrapper {
   display: flex;
@@ -167,24 +185,15 @@ li { margin-bottom: 0.8rem; }
   margin-bottom: 4rem;
 }
 
-.hero-text {
-  flex: 1.2;
-}
+.hero-text { flex: 1.2; }
+.hero-visual { flex: 0.8; display: flex; justify-content: center; }
 
-.hero-visual {
-  flex: 0.8;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-/* Glowing Image Frame */
 .image-frame {
   width: 100%;
   max-width: 350px;
   aspect-ratio: 1 / 1;
   border-radius: 24px;
-  padding: 4px; /* Space for the gradient border */
+  padding: 4px; 
   background: var(--accent-gradient);
   box-shadow: 0 10px 40px rgba(0, 242, 254, 0.2);
   animation: float 6s ease-in-out infinite;
@@ -194,7 +203,7 @@ li { margin-bottom: 0.8rem; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 20px; /* Slightly less than frame to fit inside */
+  border-radius: 20px; 
   background-color: var(--bg-surface);
 }
 
@@ -226,25 +235,18 @@ li { margin-bottom: 0.8rem; }
   overflow: hidden;
 }
 
-/* Subtle inner glow on cards */
 .card::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 1px;
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
 }
 
 .card:hover {
   transform: translateY(-10px);
   border-color: rgba(0, 242, 254, 0.3);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(127, 0, 255, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(127, 0, 255, 0.15);
 }
 
-.card h3 { 
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: var(--text-main);
-}
+.card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-main); }
 
 /* ==========================
    Futuristic Tables
@@ -259,41 +261,57 @@ table {
   border: 1px solid var(--glass-border);
 }
 
-thead { 
-  background: rgba(255,255,255,0.05); 
-}
-
-th, td { 
-  padding: 1.2rem; 
-  text-align: left; 
-}
-
-th { 
-  font-weight: 600; 
-  color: var(--neon-cyan);
-  text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-}
-
-td {
-  border-bottom: 1px solid var(--glass-border);
-  background: rgba(0,0,0,0.2);
-}
-
+thead { background: rgba(128, 128, 128, 0.1); }
+th, td { padding: 1.2rem; text-align: left; }
+th { font-weight: 600; color: var(--neon-cyan); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+td { border-bottom: 1px solid var(--glass-border); background: var(--glass-bg); }
 tr:last-child td { border-bottom: none; }
-
 td strong { color: var(--neon-cyan); }
+
+/* ==========================
+   Back to Top Button (Floating Bottom Right)
+========================== */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--glass-bg);
+  color: var(--neon-cyan);
+  border: 1px solid var(--neon-cyan);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(127, 0, 255, 0.4);
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ==========================
    Responsive Mobile Fixes
 ========================== */
 @media (max-width: 900px) {
-  .hero-wrapper {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-  .image-frame {
-    max-width: 250px;
-  }
+  .hero-wrapper { flex-direction: column-reverse; text-align: center; }
+  .image-frame { max-width: 250px; }
+  #themeToggle { top: 1rem; right: 1rem; width: 35px; height: 35px; font-size: 1rem; }
 }
