@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Aayush Parikh: Senior at Westwood High IB World School, published ML researcher, and top 25 Texas varsity tennis player.">
   <title>Volunteering | Aayush Parikh</title>
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -11,7 +12,7 @@
 <body>
   <div id="scrollProgress"></div>
   <header>
-    <button id="themeToggle" title="Toggle Mode">☀️</button>
+    <button id="themeToggle" title="Toggle Light/Dark Mode" aria-label="Toggle Light and Dark Mode">☀️</button>
     <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
@@ -25,8 +26,8 @@
   </header>
   
   <main>
-    <h2>Community Leadership</h2>
-    <div class="card-grid">
+    <h2 class="reveal">Community Leadership</h2>
+    <div class="card-grid reveal">
       <div class="card">
         <h3>Director, First Racquet NGO (Austin)</h3>
         <p>Giving back through tennis has been one of the most meaningful parts of my life. I founded and led the Austin branch of an international tennis nonprofit. I have organized successful tournaments with multiple draws of young kids eager to play for the charity.</p>
@@ -45,7 +46,7 @@
   </main>
 
   <footer style="text-align: center; padding: 3rem; color: var(--text-muted); margin-top: auto; border-top: 1px solid var(--glass-border);">© 2025 Aayush Parikh. All rights reserved.</footer>
-  <button id="backToTop" title="Back to top">↑</button>
+  <button id="backToTop" title="Back to top" aria-label="Scroll back to top">↑</button>
 
   <script>
     const themeToggle = document.getElementById('themeToggle');
@@ -62,13 +63,29 @@
     const backToTopButton = document.getElementById('backToTop');
     window.addEventListener('scroll', () => backToTopButton.classList.toggle('show', window.scrollY > 300));
     backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    
     // Scroll Progress Bar Logic
-window.addEventListener('scroll', () => {
-  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.getElementById('scrollProgress').style.width = scrolled + '%';
-});
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+
+    // Advanced Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); 
+      });
+    }, revealOptions);
+    revealElements.forEach(el => revealOnScroll.observe(el));
   </script>
 </body>
 </html>
