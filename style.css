@@ -43,6 +43,18 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
+/* Custom Text Selection */
+::selection {
+  background: rgba(56, 189, 248, 0.3); /* Matches your neon-cyan */
+  color: var(--text-main);
+  text-shadow: none;
+}
+::-moz-selection {
+  background: rgba(56, 189, 248, 0.3);
+  color: var(--text-main);
+  text-shadow: none;
+}
+
 body {
   font-family: 'Inter', -apple-system, sans-serif;
   background-color: var(--bg-base);
