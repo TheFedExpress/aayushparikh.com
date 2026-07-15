@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Aayush Parikh: Senior at Westwood High IB World School, published ML researcher, and top 25 Texas varsity tennis player.">
   <title>Academics | Aayush Parikh</title>
   <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -11,7 +12,7 @@
 <body>
   <div id="scrollProgress"></div>
   <header>
-    <button id="themeToggle" title="Toggle Mode">☀️</button>
+    <button id="themeToggle" title="Toggle Light/Dark Mode" aria-label="Toggle Light and Dark Mode">☀️</button>
     <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
@@ -25,10 +26,10 @@
   </header>
   
   <main>
-    <h2>Academic Profile</h2>
-    <p>I approach academics with the same mindset I bring to tennis: consistent effort and curiosity. I enjoy the logic behind mathematics and the creativity within engineering. Both remind me that the best solutions come from patience and precision.</p>
+    <h2 class="reveal">Academic Profile</h2>
+    <p class="reveal">I approach academics with the same mindset I bring to tennis: consistent effort and curiosity. I enjoy the logic behind mathematics and the creativity within engineering. Both remind me that the best solutions come from patience and precision.</p>
     
-    <div class="card-grid">
+    <div class="card-grid reveal">
       <div class="card">
         <h3>Westwood High IB World School</h3>
         <ul>
@@ -48,11 +49,11 @@
       </div>
     </div>
 
-    <h2>Current Advanced Coursework</h2>
-    <p>AP Physics C (Mechanics & E&M), AP Chemistry, AP Economics (Micro & Macro), AP Government, Multivariable Calculus, Digital Electronics, Advanced Computer Science 1, and AP English Literature.</p>
+    <h2 class="reveal">Current Advanced Coursework</h2>
+    <p class="reveal">AP Physics C (Mechanics & E&M), AP Chemistry, AP Economics (Micro & Macro), AP Government, Multivariable Calculus, Digital Electronics, Advanced Computer Science 1, and AP English Literature.</p>
 
-    <h2>Research & Internships</h2>
-    <div class="card-grid">
+    <h2 class="reveal">Research & Internships</h2>
+    <div class="card-grid reveal">
       <div class="card">
         <h3>Published ML Research</h3>
         <p><strong>Oxford JSS Publication:</strong> <em>"Reduction of Red Light Waiting Times Using An Adaptive Traffic Optimization Model"</em>. Developed a simulation framework to optimize traffic signal timing using machine learning (Oct 2025).</p>
@@ -67,8 +68,8 @@
       </div>
     </div>
 
-    <h2>STEM Journey & Projects</h2>
-    <div class="card-grid">
+    <h2 class="reveal">STEM Journey & Projects</h2>
+    <div class="card-grid reveal">
       <div class="card">
         <h3>Early Robotics</h3>
         <p>In third grade, I joined FIRST LEGO League (FLL), where my team competed against college-level groups. By middle school, I was building and programming EV3 robots to complete household tasks like mopping.</p>
@@ -79,8 +80,8 @@
       </div>
     </div>
 
-    <h2>Technical Skills & Certifications</h2>
-    <table>
+    <h2 class="reveal">Technical Skills & Certifications</h2>
+    <table class="reveal">
       <thead>
         <tr>
           <th>Category</th>
@@ -97,7 +98,7 @@
   </main>
 
   <footer style="text-align: center; padding: 3rem; color: var(--text-muted); margin-top: auto; border-top: 1px solid var(--glass-border);">© 2025 Aayush Parikh. All rights reserved.</footer>
-  <button id="backToTop" title="Back to top">↑</button>
+  <button id="backToTop" title="Back to top" aria-label="Scroll back to top">↑</button>
 
   <script>
     const themeToggle = document.getElementById('themeToggle');
@@ -114,13 +115,29 @@
     const backToTopButton = document.getElementById('backToTop');
     window.addEventListener('scroll', () => backToTopButton.classList.toggle('show', window.scrollY > 300));
     backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    
     // Scroll Progress Bar Logic
-window.addEventListener('scroll', () => {
-  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  document.getElementById('scrollProgress').style.width = scrolled + '%';
-});
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+
+    // Advanced Scroll Reveal Animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealOptions = {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target); 
+      });
+    }, revealOptions);
+    revealElements.forEach(el => revealOnScroll.observe(el));
   </script>
 </body>
 </html>
