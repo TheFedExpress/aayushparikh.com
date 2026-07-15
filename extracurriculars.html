@@ -9,6 +9,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
+  <div id="scrollProgress"></div>
   <header>
     <button id="themeToggle" title="Toggle Mode">☀️</button>
     <h1>Aayush Parikh</h1>
@@ -66,6 +67,13 @@
     const backToTopButton = document.getElementById('backToTop');
     window.addEventListener('scroll', () => backToTopButton.classList.toggle('show', window.scrollY > 300));
     backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    // Scroll Progress Bar Logic
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  document.getElementById('scrollProgress').style.width = scrolled + '%';
+});
   </script>
 </body>
 </html>
