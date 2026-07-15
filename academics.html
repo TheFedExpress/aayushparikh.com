@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Academics | Aayush Parikh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
   <header>
-    <button id="themeToggle" title="Toggle Mode">🌙</button>
+    <button id="themeToggle" title="Toggle Mode">☀️</button>
     <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
@@ -23,48 +23,78 @@
   </header>
   
   <main>
-    <p>I approach academics with the same mindset I bring to tennis—consistent effort and curiosity. My main focus is STEM, but I also value a balanced education.</p>
-
+    <h2>Academic Profile</h2>
     <div class="card-grid">
       <div class="card">
-        <h3>Coursework & APs</h3>
+        <h3>Westwood High IB World School</h3>
         <ul>
-          <li><strong>Score of 5:</strong> AP Precalculus, AP Statistics, AP Physics 1, AP Human Geography</li>
-          <li><strong>Score of 4:</strong> AP Computer Science A</li>
-          <li><strong>Current:</strong> AP Calculus BC, Adv. Computer Science 1</li>
+          <li><strong>GPA:</strong> 3.93/4.0 UW | 5.49/5.0 W</li>
+          <li><strong>SAT:</strong> 1570 (1st and only attempt)</li>
+          <li><strong>Endorsements:</strong> Computer Science, Business Management, Multidisciplinary</li>
         </ul>
       </div>
       <div class="card">
-        <h3>General Achievements</h3>
+        <h3>Completed AP Exams</h3>
         <ul>
-          <li><strong>SAT:</strong> 1570</li>
-          <li>National Honor Society (NHS & NJHS)</li>
-          <li>NOCTI Certified – Foundational Knowledge-Based Written</li>
+          <li><strong>Score of 5:</strong> Calc BC, Precalculus, Physics 1, Statistics, Human Geography</li>
+          <li><strong>Score of 4:</strong> Computer Science A, English Language</li>
         </ul>
       </div>
     </div>
 
-    <h2>Certifications</h2>
+    <h2>Current Advanced Coursework</h2>
+    <p>AP Physics C (Mechanics & E&M), AP Chemistry, AP Economics (Micro & Macro), AP Government, Multivariable Calculus, Digital Electronics, and AP English Literature.</p>
+
+    <h2>Research & Experience</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Published ML Research</h3>
+        <p><strong>Oxford JSS Publication:</strong> <em>"Reduction of Red Light Waiting Times Using An Adaptive Traffic Optimization Model"</em>. Developed a simulation framework to optimize traffic signal timing using machine learning.</p>
+      </div>
+      <div class="card">
+        <h3>Engineering Internships</h3>
+        <ul>
+          <li><strong>MySafeSpace:</strong> Product/UI Intern. Developed and presented a UI prototype directly to the founder.</li>
+          <li><strong>AumFresh:</strong> Engineering & Ops Intern. Supported engineering, QA, and export docs.</li>
+          <li><strong>MechAir:</strong> Engineering Intern. Supported design and product development.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Technical Skills & Certifications</h2>
     <table>
       <thead>
         <tr>
-          <th>Certification</th>
-          <th>Issuer</th>
+          <th>Category</th>
+          <th>Details</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Circuits and Electronics 1</td><td>MITx (edX)</td></tr>
-        <tr><td>Unmanned Air System–Synthetic Aperture Radar</td><td>MIT Beaver Works</td></tr>
-        <tr><td>Version Control and UNIX</td><td>MIT Beaver Works</td></tr>
-        <tr><td>Python Core</td><td>MIT Beaver Works</td></tr>
-        <tr><td>Cybersecurity Essentials</td><td>CareerSafe</td></tr>
+        <tr><td><strong>Programming & Hardware</strong></td><td>Python, Raspberry Pi, Digital Logic, Circuit Analysis, Machine Learning</td></tr>
+        <tr><td><strong>MITx (edX)</strong></td><td>6.002x - Introduction to Electrical Engineering</td></tr>
+        <tr><td><strong>MIT Beaver Works</strong></td><td>BWSI Prerequisite Coursework (Drones, Python, UNIX)</td></tr>
       </tbody>
     </table>
-
-    <h2>STEM Journey</h2>
-    <p>My interest in STEM began early with FIRST LEGO League (FLL). By middle school, I was building and programming EV3 robots. Later, I learned Python and experimented with Raspberry Pi, exploring how software can interact with the real world.</p>
   </main>
 
-  <footer>© 2025 Aayush Parikh. All rights reserved.</footer>
-  </body>
+  <footer style="text-align: center; padding: 3rem; color: var(--text-muted); margin-top: auto; border-top: 1px solid var(--glass-border);">© 2025 Aayush Parikh. All rights reserved.</footer>
+  <button id="backToTop" title="Back to top">↑</button>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => backToTopButton.classList.toggle('show', window.scrollY > 300));
+    backToTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
 </html>
