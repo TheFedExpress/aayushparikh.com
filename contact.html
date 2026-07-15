@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Aayush Parikh</title>
-  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
   <header>
-    <button id="themeToggle" title="Toggle Mode">🌙</button>
+    <button id="themeToggle" title="Toggle Mode">☀️</button>
     <h1>Aayush Parikh</h1>
     <nav class="top-buttons">
       <a href="index.html" class="button">Home</a>
@@ -26,27 +26,27 @@
     <h2>Let's Connect</h2>
     <p>Thank you for visiting my website. I'm always open to connecting about tennis, academics, or new opportunities. I aim to respond within a few days.</p>
     
-    <div class="card" style="margin-top: 2rem;">
+    <div class="card" style="margin-top: 2rem; text-align: left;">
       <ul style="list-style: none; padding: 0;">
-        <li style="margin-bottom: 1rem;"><strong>Email:</strong> <a href="mailto:parikhaayush@gmail.com">parikhaayush@gmail.com</a></li>
+        <li style="margin-bottom: 1rem;"><strong>Phone:</strong> +1 (940) 312-9917</li>
+        <li style="margin-bottom: 1rem;"><strong>Email:</strong> <a href="mailto:parikhaayush2027@gmail.com">parikhaayush2027@gmail.com</a> (or parikhaayush@gmail.com)</li>
         <li style="margin-bottom: 1rem;"><strong>Professional:</strong> <a href="https://linkedin.com/in/parikh-aayush" target="_blank">LinkedIn Profile</a></li>
+        <li style="margin-bottom: 1rem;"><strong>Development:</strong> <a href="https://github.com/your-github-username" target="_blank">GitHub Profile</a></li>
         <li><strong>Athletics:</strong> <a href="https://www.tennisrecruiting.net/player.asp?id=985097" target="_blank">Tennis Recruiting Profile</a></li>
       </ul>
     </div>
   </main>
 
-  <footer style="margin-top: auto;">© 2025 Aayush Parikh. All rights reserved.</footer>
+  <footer style="margin-top: auto; text-align: center; padding: 3rem; color: var(--text-muted); border-top: 1px solid var(--glass-border);">© 2025 Aayush Parikh. All rights reserved.</footer>
 
   <script>
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', savedTheme);
     themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
-
     themeToggle.addEventListener('click', () => {
-      const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       html.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
